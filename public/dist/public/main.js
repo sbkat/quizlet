@@ -32,7 +32,7 @@ webpackEmptyAsyncContext.id = "./$$_lazy_route_resource lazy recursive";
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<!DOCTYPE html>\r\n<html lang=\"en\">\r\n<head>\r\n  <meta charset=\"UTF-8\">\r\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n  <meta http-equiv=\"X-UA-Compatible\" content=\"ie=edge\">\r\n  <title>SOCKET TRIVIA</title>\r\n</head>\r\n<body>\r\n  <nav>\r\n    <p>Already have a game PIN?</p>\r\n    <button [routerLink]=\"['/game-platform']\">Play now!</button>\r\n    <button [routerLink]=\"['/signup']\">Sign up!</button>\r\n    <button [routerLink]=\"['/login']\">Login</button>\r\n  </nav>\r\n  <h1>Welcome to Socket Trivia!</h1>\r\n  <p>A fun and interactive learning platform to get your audience engaged!</p>\r\n\r\n  <router-outlet></router-outlet>\r\n  <app-login></app-login>\r\n  <app-sign-up></app-sign-up>\r\n</body>\r\n</html>");
+/* harmony default export */ __webpack_exports__["default"] = ("<!DOCTYPE html>\r\n<html lang=\"en\">\r\n<head>\r\n  <meta charset=\"UTF-8\">\r\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n  <meta http-equiv=\"X-UA-Compatible\" content=\"ie=edge\">\r\n  <title>SOCKET TRIVIA</title>\r\n</head>\r\n<body>\r\n  <nav>\r\n    <p>Already have a game PIN?</p>\r\n    <button [routerLink]=\"['/game-platform']\">Play now!</button>\r\n    <button [routerLink]=\"['/signup']\">Sign up!</button>\r\n    <button [routerLink]=\"['/login']\">Login</button>\r\n  </nav>\r\n  <h1>Welcome to Socket Trivia!</h1>\r\n  <p>A fun and interactive learning platform to get your audience engaged!</p>\r\n\r\n  <router-outlet></router-outlet>\r\n</body>\r\n</html>");
 
 /***/ }),
 
@@ -71,7 +71,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<p>game-platform works!</p>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div>\n    <form (submit)=\"submitPlayer()\">\n        <h1>Enter your player info!</h1>\n        <label for=\"pin\">Game pin:</label>\n        <input type=\"pin\" name=\"pin\">\n        <br>\n        <label for=\"nickname\">Nickname:</label>\n        <input type=\"nickname\" name=\"nickname\">\n        <br>\n        <button type=\"submit\">Let's play!</button>\n    </form>\n</div>");
 
 /***/ }),
 
