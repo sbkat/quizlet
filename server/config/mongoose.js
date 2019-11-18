@@ -6,5 +6,4 @@ mongoose.connect('mongodb://localhost/socket_trivia', {
     useFindAndModify: false, 
 });
 
-require('../../models/user')
-require('../../models/quiz')
+require('../models/user')
