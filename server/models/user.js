@@ -1,5 +1,24 @@
 const mongoose = require('mongoose')
 
+const QuizSchema = new mongoose.Schema({
+    title: {
+        type: String,
+        required: [true, "is required"],
+    },
+    time: {
+        type: number,
+        required: [true, "is required"],
+    },
+    question: [{
+        type: String,
+        required: [true, "is required"],
+    }],
+    answer: [{
+        type: String,
+        required: [true, "is required"],
+    }],
+}, { timestamps: true });
+
 const UserSchema = new mongoose.Schema({
     username: {
         type: String,
@@ -27,4 +46,5 @@ const UserSchema = new mongoose.Schema({
 }, { timestamps: true });
 
 const User = mongoose.model('User', UserSchema);
+const Quiz = mongoose.model('Quiz', QuizSchema);
 
