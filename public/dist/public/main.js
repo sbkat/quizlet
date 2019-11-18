@@ -32,7 +32,7 @@ webpackEmptyAsyncContext.id = "./$$_lazy_route_resource lazy recursive";
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<!DOCTYPE html>\r\n<html lang=\"en\">\r\n<head>\r\n  <meta charset=\"UTF-8\">\r\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n  <meta http-equiv=\"X-UA-Compatible\" content=\"ie=edge\">\r\n  <title>SOCKET TRIVIA</title>\r\n</head>\r\n<body>\r\n  <nav>\r\n    <p>Already have a game PIN?</p>\r\n    <button [routerLink]=\"['/game-platform']\">Play now!</button>\r\n    <button [routerLink]=\"['/signup']\">Sign up!</button>\r\n    <button [routerLink]=\"['/login']\">Login</button>\r\n  </nav>\r\n  <h1>Welcome to Socket Trivia!</h1>\r\n  <p>A fun and interactive learning platform to get your audience engaged!</p>\r\n</body>\r\n</html>");
+/* harmony default export */ __webpack_exports__["default"] = ("<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <meta http-equiv=\"X-UA-Compatible\" content=\"ie=edge\">\n  <title>SOCKET TRIVIA</title>\n</head>\n<body>\n  <nav>\n    <p>Already have a game PIN?</p>\n    <button [routerLink]=\"['/game-platform']\">Play now!</button>\n    <button [routerLink]=\"['/signup']\">Sign up!</button>\n    <button [routerLink]=\"['/login']\">Login</button>\n  </nav>\n  <h1>Welcome to Socket Trivia!</h1>\n  <p>A fun and interactive learning platform to get your audience engaged!</p>\n</body>\n</html>");
 
 /***/ }),
 
@@ -806,7 +806,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_2__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Kathy\Desktop\socket_collab\socket_trivia\public\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! /Users/tony/Documents/code/projects/socket_trivia/public/src/main.ts */"./src/main.ts");
 
 
 /***/ })
