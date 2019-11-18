@@ -7,3 +7,4 @@ mongoose.connect('mongodb://localhost/socket_trivia', {
 });
 
 require('../models/user')
+
