@@ -18,3 +18,15 @@ User interface:
   - can log in with a game pin
   - can see other users coming online or being disconnected
   - can choose from 4 colors, presented with the right or wrong answer after the time is up
+
+Admin wireframe:
+![wireframe-1](wireframe/wireframe-1.png)
+![wireframe-2](wireframe/wireframe-2.png)
+![wireframe-3](wireframe/wireframe-3.png)
+![wireframe-4](wireframe/wireframe-4.png)
+![wireframe-5](wireframe/wireframe-5.png)
+![wireframe-6](wireframe/wireframe-6.png)
+
+User wireframe:
+![wireframe-7](wireframe/wireframe-7.png)
+![wireframe-8](wireframe/wireframe-8.png)
