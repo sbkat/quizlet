@@ -9,11 +9,15 @@ export class HttpService {
   constructor(private _http: HttpClient){}
 
   register(newUser) {
-    return this._http.post('/api/user', newUser);
+    return this._http.post('/api/register', newUser);
   }
 
   login(loginUser) {
     return this._http.post('/api/login', loginUser);
+  }
+
+  getCurrentUser() {
+    return this._http.get('/api/current-user');
   }
 
   all() {

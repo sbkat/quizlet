@@ -58,7 +58,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<h1>Hello, user!</h1>\r\n\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<h1>Hello, {{ currentUser.username }}!</h1>\r\n\r\n");
 
 /***/ }),
 
@@ -97,7 +97,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div>\r\n    <form (submit)=\"login()\">\r\n        <h1>Login</h1>\r\n        <label for=\"email\">Email:</label>\r\n        <input type=\"email\" name=\"email\" [(ngModel)]='loginUser.email'>\r\n        <br>\r\n        <label for=\"password\">Password:</label>\r\n        <input type=\"password\" name=\"password\" [(ngModel)]='loginUser.password'>\r\n        <br>\r\n        <br>\r\n        <button type=\"submit\">Let's go!</button>\r\n    </form>\r\n    <p>Don't have an account? <a [routerLink]=\"['/signup']\">Sign up here</a></p>\r\n</div>");
+/* harmony default export */ __webpack_exports__["default"] = ("<div>\r\n    <p *ngIf=\"errorMsg\" style=\"color:red\">\r\n      {{ errorMsg }}\r\n    </p>\r\n</div>\r\n<div>\r\n    <form (submit)=\"login()\">\r\n        <h1>Login</h1>\r\n        <label for=\"email\">Email:</label>\r\n        <input type=\"email\" name=\"email\" [(ngModel)]='loginUser.email'>\r\n        <br>\r\n        <label for=\"password\">Password:</label>\r\n        <input type=\"password\" name=\"password\" [(ngModel)]='loginUser.password'>\r\n        <br>\r\n        <br>\r\n        <button type=\"submit\">Let's go!</button>\r\n    </form>\r\n    <p>Don't have an account? <a [routerLink]=\"['/signup']\">Sign up here</a></p>\r\n</div>");
 
 /***/ }),
 
@@ -579,13 +579,36 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DashboardComponent", function() { return DashboardComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _http_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../http.service */ "./src/app/http.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+
+
 
 
 let DashboardComponent = class DashboardComponent {
-    constructor() { }
+    constructor(_httpService, _router) {
+        this._httpService = _httpService;
+        this._router = _router;
+    }
     ngOnInit() {
+        this.getCurrentUser();
+    }
+    getCurrentUser() {
+        let obs = this._httpService.getCurrentUser();
+        obs.subscribe((data) => {
+            if (data.sessionStatus == false) {
+                this._router.navigate(['/']);
+            }
+            else {
+                this.currentUser = data;
+            }
+        });
     }
 };
+DashboardComponent.ctorParameters = () => [
+    { type: _http_service__WEBPACK_IMPORTED_MODULE_2__["HttpService"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"] }
+];
 DashboardComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-dashboard',
@@ -707,10 +730,13 @@ let HttpService = class HttpService {
         this._http = _http;
     }
     register(newUser) {
-        return this._http.post('/api/user', newUser);
+        return this._http.post('/api/register', newUser);
     }
     login(loginUser) {
         return this._http.post('/api/login', loginUser);
+    }
+    getCurrentUser() {
+        return this._http.get('/api/current-user');
     }
     all() {
         return this._http.get('/api/users');
@@ -776,8 +802,8 @@ let LoginComponent = class LoginComponent {
         let obs = this._httpService.login(this.loginUser);
         obs.subscribe((data) => {
             console.log('data:', data);
-            if (data.hasOwnProperty('errors')) {
-                this.errorMsg = data.errors.message;
+            if (data.errorMessage) {
+                this.errorMsg = data.errorMessage;
             }
             else {
                 this._router.navigate(['/dashboard']);

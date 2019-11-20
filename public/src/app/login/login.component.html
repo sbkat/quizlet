@@ -1,4 +1,9 @@
 <div>
+    <p *ngIf="errorMsg" style="color:red">
+      {{ errorMsg }}
+    </p>
+</div>
+<div>
     <form (submit)="login()">
         <h1>Login</h1>
         <label for="email">Email:</label>

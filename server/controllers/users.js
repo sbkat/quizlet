@@ -22,7 +22,7 @@ module.exports = {
     })
   },
 
-// promise method...
+  // promise method...
   // register1(req, res) {
   //   bcrypt.hash(req.body.password, 8)
   //     .then((hash) => {
@@ -44,7 +44,6 @@ module.exports = {
 
 
   login(req, res) {
-    // console.log(req.body);
     User.findOne({ email: req.body.email }, (err, user) => {
       if(user == null) {
         res.json({ errorMessage: "Invalid Credentials" });
@@ -60,6 +59,20 @@ module.exports = {
         })
       }
     })
+  },
+
+  getCurrentUser(req, res) {
+    if(req.session.userId) {
+      User.findOne({ _id: req.session.userId }, (err, user) => {
+        if(err) {
+          res.json({ errors: errors });
+        } else {
+          res.json(user);
+        }
+      })
+    } else {
+      res.json({ sessionStatus: false });
+    }
   },
 
   all(req, res) {

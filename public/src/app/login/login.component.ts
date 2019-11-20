@@ -27,8 +27,8 @@ export class LoginComponent implements OnInit {
     let obs = this._httpService.login(this.loginUser);
     obs.subscribe((data: any) => {
       console.log('data:', data);
-      if (data.hasOwnProperty('errors')) {
-        this.errorMsg = data.errors.message;
+      if (data.errorMessage) {
+        this.errorMsg = data.errorMessage;
       } else {
         this._router.navigate(['/dashboard']);
       }
