@@ -1,21 +1,31 @@
 {
-  "name": "project",
+  "name": "socket_trivia",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "description": "Open source \"kahoot\" app clone. To get started, clone GitHub repo and..",
+  "main": "server.js",
   "dependencies": {
-    "@types/socket.io-client": "^1.4.32",
-    "bcrypt": "^3.0.7",
+    "bcryptjs": "^2.4.3",
     "express": "^4.17.1",
     "express-flash": "0.0.2",
     "express-session": "^1.17.0",
     "mongoose": "^5.7.11",
+    "socket.io": "^2.3.0",
     "socket.io-client": "^2.3.0"
-  }
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sbkat/socket_trivia.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sbkat/socket_trivia/issues"
+  },
+  "homepage": "https://github.com/sbkat/socket_trivia#readme"
 }

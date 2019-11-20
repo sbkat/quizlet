@@ -32,7 +32,7 @@ webpackEmptyAsyncContext.id = "./$$_lazy_route_resource lazy recursive";
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<!DOCTYPE html>\r\n<html lang=\"en\">\r\n<head>\r\n  <meta charset=\"UTF-8\">\r\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n  <meta http-equiv=\"X-UA-Compatible\" content=\"ie=edge\">\r\n  <title>SOCKET TRIVIA</title>\r\n</head>\r\n<body>\r\n  <nav>\r\n    <p>Already have a game PIN?</p>\r\n    <button [routerLink]=\"['/game-platform']\">Play now!</button>\r\n    <button [routerLink]=\"['/signup']\">Sign up!</button>\r\n    <button [routerLink]=\"['/login']\">Login</button>\r\n  </nav>\r\n  <h1>Welcome to Socket Trivia!</h1>\r\n  <p>A fun and interactive learning platform to get your audience engaged!</p>\r\n\r\n  <router-outlet></router-outlet>\r\n</body>\r\n</html>");
+/* harmony default export */ __webpack_exports__["default"] = ("<!DOCTYPE html>\r\n<html lang=\"en\">\r\n<head>\r\n  <meta charset=\"UTF-8\">\r\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n  <meta http-equiv=\"X-UA-Compatible\" content=\"ie=edge\">\r\n  <title>Socket Trivia</title>\r\n</head>\r\n<body>\r\n  <nav>\r\n    <p>Already have a game PIN?</p>\r\n    <button [routerLink]=\"['/game-platform']\">Play now!</button>\r\n    <button [routerLink]=\"['/signup']\">Sign up!</button>\r\n    <button [routerLink]=\"['/login']\">Login</button>\r\n    <button [routerLink]=\"['/homepage']\">Home</button>\r\n  </nav>\r\n\r\n  <router-outlet></router-outlet>\r\n</body>\r\n</html>");
 
 /***/ }),
 
@@ -45,7 +45,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<p>create-quiz works!</p>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<p>create-quiz works!</p>\r\n");
 
 /***/ }),
 
@@ -58,7 +58,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<p>dashboard works!</p>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<p>dashboard works!</p>\r\n");
 
 /***/ }),
 
@@ -71,7 +71,20 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div>\n    <form (submit)=\"submitPlayer()\">\n        <h1>Enter your player info!</h1>\n        <label for=\"pin\">Game pin:</label>\n        <input type=\"pin\" name=\"pin\">\n        <br>\n        <label for=\"nickname\">Nickname:</label>\n        <input type=\"nickname\" name=\"nickname\">\n        <br>\n        <button type=\"submit\">Let's play!</button>\n    </form>\n</div>");
+/* harmony default export */ __webpack_exports__["default"] = ("<div>\r\n    <form (submit)=\"submitPlayer()\">\r\n        <h1>Enter your player info!</h1>\r\n        <label for=\"pin\">Game pin:</label>\r\n        <input type=\"pin\" name=\"pin\">\r\n        <br>\r\n        <label for=\"nickname\">Nickname:</label>\r\n        <input type=\"nickname\" name=\"nickname\">\r\n        <br>\r\n        <button type=\"submit\">Let's play!</button>\r\n    </form>\r\n</div>");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/homepage/homepage.component.html":
+/*!****************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/homepage/homepage.component.html ***!
+  \****************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<div>\n    <h1>Welcome to Socket Trivia!</h1>\n    <p>A fun and interactive learning platform to get your audience engaged!</p>\n</div>");
 
 /***/ }),
 
@@ -84,7 +97,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div>\n    <form (submit)=\"submitLogin()\">\n        <h1>Login</h1>\n        <label for=\"email\">Email:</label>\n        <input type=\"email\" name=\"email\">\n        <br>\n        <label for=\"password\">Password:</label>\n        <input type=\"password\" name=\"password\">\n        <br>\n        <br>\n        <button type=\"submit\">Let's go!</button>\n    </form>\n    <p>Don't have an account? <a [routerLink]=\"['/signup']\">Sign up here</a></p>\n</div>");
+/* harmony default export */ __webpack_exports__["default"] = ("<div>\r\n    <form (submit)=\"submitLogin()\">\r\n        <h1>Login</h1>\r\n        <label for=\"email\">Email:</label>\r\n        <input type=\"email\" name=\"email\">\r\n        <br>\r\n        <label for=\"password\">Password:</label>\r\n        <input type=\"password\" name=\"password\">\r\n        <br>\r\n        <br>\r\n        <button type=\"submit\">Let's go!</button>\r\n    </form>\r\n    <p>Don't have an account? <a [routerLink]=\"['/signup']\">Sign up here</a></p>\r\n</div>");
 
 /***/ }),
 
@@ -97,7 +110,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div>\n    <form (submit)=\"submitReg()\">\n        <h1>Sign up!</h1>\n        <label for=\"username\">Username:</label>\n        <input type=\"text\" name=\"username\">\n        <br>\n        <label for=\"email\">Email:</label>\n        <input type=\"email\" name=\"email\">\n        <br>\n        <label for=\"password\">Password:</label>\n        <input type=\"password\" name=\"password\">\n        <br>\n        <button type=\"submit\">Submit</button>\n    </form>\n    <p>Already have an account? <a [routerLink]=\"['/login']\">Login here</a></p>\n</div>");
+/* harmony default export */ __webpack_exports__["default"] = ("<div>\r\n    <form (submit)=\"submitReg()\">\r\n        <h1>Sign up!</h1>\r\n        <label for=\"username\">Username:</label>\r\n        <input type=\"text\" name=\"username\">\r\n        <br>\r\n        <label for=\"email\">Email:</label>\r\n        <input type=\"email\" name=\"email\">\r\n        <br>\r\n        <label for=\"password\">Password:</label>\r\n        <input type=\"password\" name=\"password\">\r\n        <br>\r\n        <button type=\"submit\">Submit</button>\r\n    </form>\r\n    <p>Already have an account? <a [routerLink]=\"['/login']\">Login here</a></p>\r\n</div>");
 
 /***/ }),
 
@@ -346,8 +359,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./dashboard/dashboard.component */ "./src/app/dashboard/dashboard.component.ts");
 /* harmony import */ var _game_platform_game_platform_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./game-platform/game-platform.component */ "./src/app/game-platform/game-platform.component.ts");
 /* harmony import */ var _create_quiz_create_quiz_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./create-quiz/create-quiz.component */ "./src/app/create-quiz/create-quiz.component.ts");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+/* harmony import */ var _homepage_homepage_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./homepage/homepage.component */ "./src/app/homepage/homepage.component.ts");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+
 
 
 
@@ -362,14 +377,15 @@ const routes = [
     { path: 'dashboard', component: _dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_3__["DashboardComponent"] },
     { path: 'game-platform', component: _game_platform_game_platform_component__WEBPACK_IMPORTED_MODULE_4__["GamePlatformComponent"] },
     { path: 'create-quiz', component: _create_quiz_create_quiz_component__WEBPACK_IMPORTED_MODULE_5__["CreateQuizComponent"] },
-    { path: '', pathMatch: 'full', redirectTo: '/all' },
+    { path: 'homepage', component: _homepage_homepage_component__WEBPACK_IMPORTED_MODULE_6__["HomepageComponent"] },
+    { path: '', pathMatch: 'full', redirectTo: '/homepage' },
 ];
 let AppRoutingModule = class AppRoutingModule {
 };
 AppRoutingModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_6__["NgModule"])({
-        imports: [_angular_router__WEBPACK_IMPORTED_MODULE_7__["RouterModule"].forRoot(routes)],
-        exports: [_angular_router__WEBPACK_IMPORTED_MODULE_7__["RouterModule"]]
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_7__["NgModule"])({
+        imports: [_angular_router__WEBPACK_IMPORTED_MODULE_8__["RouterModule"].forRoot(routes)],
+        exports: [_angular_router__WEBPACK_IMPORTED_MODULE_8__["RouterModule"]]
     })
 ], AppRoutingModule);
 
@@ -443,6 +459,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./dashboard/dashboard.component */ "./src/app/dashboard/dashboard.component.ts");
 /* harmony import */ var _create_quiz_create_quiz_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./create-quiz/create-quiz.component */ "./src/app/create-quiz/create-quiz.component.ts");
 /* harmony import */ var _game_platform_game_platform_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./game-platform/game-platform.component */ "./src/app/game-platform/game-platform.component.ts");
+/* harmony import */ var _homepage_homepage_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./homepage/homepage.component */ "./src/app/homepage/homepage.component.ts");
+
 
 
 
@@ -471,7 +489,8 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
             _login_login_component__WEBPACK_IMPORTED_MODULE_8__["LoginComponent"],
             _dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_9__["DashboardComponent"],
             _create_quiz_create_quiz_component__WEBPACK_IMPORTED_MODULE_10__["CreateQuizComponent"],
-            _game_platform_game_platform_component__WEBPACK_IMPORTED_MODULE_11__["GamePlatformComponent"]
+            _game_platform_game_platform_component__WEBPACK_IMPORTED_MODULE_11__["GamePlatformComponent"],
+            _homepage_homepage_component__WEBPACK_IMPORTED_MODULE_12__["HomepageComponent"]
         ],
         imports: [
             _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
@@ -614,6 +633,50 @@ GamePlatformComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./game-platform.component.sass */ "./src/app/game-platform/game-platform.component.sass")).default]
     })
 ], GamePlatformComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/homepage/homepage.component.sass":
+/*!**************************************************!*\
+  !*** ./src/app/homepage/homepage.component.sass ***!
+  \**************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2hvbWVwYWdlL2hvbWVwYWdlLmNvbXBvbmVudC5zYXNzIn0= */");
+
+/***/ }),
+
+/***/ "./src/app/homepage/homepage.component.ts":
+/*!************************************************!*\
+  !*** ./src/app/homepage/homepage.component.ts ***!
+  \************************************************/
+/*! exports provided: HomepageComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "HomepageComponent", function() { return HomepageComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+
+
+let HomepageComponent = class HomepageComponent {
+    constructor() { }
+    ngOnInit() {
+    }
+};
+HomepageComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-homepage',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./homepage.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/homepage/homepage.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./homepage.component.sass */ "./src/app/homepage/homepage.component.sass")).default]
+    })
+], HomepageComponent);
 
 
 
@@ -806,7 +869,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_2__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Kathy\Desktop\socket_collab\socket_trivia\public\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! C:\Users\Kathy\Desktop\collab\socket_trivia\public\src\main.ts */"./src/main.ts");
 
 
 /***/ })
