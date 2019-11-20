@@ -58,7 +58,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<p>dashboard works!</p>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<h1>Hello, user!</h1>\r\n\r\n");
 
 /***/ }),
 
@@ -707,8 +707,10 @@ let HttpService = class HttpService {
         this._http = _http;
     }
     register(newUser) {
-        console.log('in the service', newUser);
         return this._http.post('/api/user', newUser);
+    }
+    login(loginUser) {
+        return this._http.post('/api/login', loginUser);
     }
     all() {
         return this._http.get('/api/users');
@@ -753,12 +755,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _http_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../http.service */ "./src/app/http.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+
 
 
 
 let LoginComponent = class LoginComponent {
-    constructor(_httpService) {
+    constructor(_httpService, _router) {
         this._httpService = _httpService;
+        this._router = _router;
+        this.errorMsg = [];
     }
     ngOnInit() {
         this.loginUser = {
@@ -767,10 +773,21 @@ let LoginComponent = class LoginComponent {
         };
     }
     login() {
+        let obs = this._httpService.login(this.loginUser);
+        obs.subscribe((data) => {
+            console.log('data:', data);
+            if (data.hasOwnProperty('errors')) {
+                this.errorMsg = data.errors.message;
+            }
+            else {
+                this._router.navigate(['/dashboard']);
+            }
+        });
     }
 };
 LoginComponent.ctorParameters = () => [
-    { type: _http_service__WEBPACK_IMPORTED_MODULE_2__["HttpService"] }
+    { type: _http_service__WEBPACK_IMPORTED_MODULE_2__["HttpService"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"] }
 ];
 LoginComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -829,7 +846,6 @@ let SignUpComponent = class SignUpComponent {
         };
     }
     register() {
-        console.log('in the component', this.newUser);
         let obs = this._httpService.register(this.newUser);
         obs.subscribe((data) => {
             console.log('data:', data);
@@ -837,7 +853,7 @@ let SignUpComponent = class SignUpComponent {
                 this.errorMsg = data.errors.message;
             }
             else {
-                this._router.navigate(['/game-platform']);
+                this._router.navigate(['/dashboard']);
             }
         });
     }

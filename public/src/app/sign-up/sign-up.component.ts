@@ -26,14 +26,13 @@ export class SignUpComponent implements OnInit {
   }
 
   register() {
-    console.log('in the component', this.newUser);
     let obs = this._httpService.register(this.newUser);
     obs.subscribe((data: any) => {
       console.log('data:', data);
       if (data.hasOwnProperty('errors')) {
         this.errorMsg = data.errors.message;
       } else {
-        this._router.navigate(['/game-platform']);
+        this._router.navigate(['/dashboard']);
       }
     })
   }

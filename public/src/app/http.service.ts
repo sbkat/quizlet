@@ -9,8 +9,11 @@ export class HttpService {
   constructor(private _http: HttpClient){}
 
   register(newUser) {
-    console.log('in the service', newUser);
     return this._http.post('/api/user', newUser);
+  }
+
+  login(loginUser) {
+    return this._http.post('/api/login', loginUser);
   }
 
   all() {

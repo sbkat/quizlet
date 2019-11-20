@@ -5,17 +5,16 @@ const User = mongoose.model('User');
 module.exports = {
   register(req, res) {
     bcrypt.hash(req.body.password, 8, (err, hash) => {
-      if(err) {
-          res.json({ errors: err });
+      if (err) {
+        res.json({ errors: err });
       } else {
         req.body.password = hash;
-        console.log('in the controller:', req.body);
         User.create(req.body, (err, user) => {
-          if(err) {
+          if (err) {
             res.json({ errors: err });
           } else {
-            console.log('controller HERE:', user)
             req.session.userId = user._id;
+            req.session.name = user._username;
             res.json(user);
           }
         })
@@ -23,14 +22,55 @@ module.exports = {
     })
   },
 
-  login(req, res) {
+// promise method...
+  // register1(req, res) {
+  //   bcrypt.hash(req.body.password, 8)
+  //     .then((hash) => {
+  //       req.body.password = hash;
 
+  //       User.create(req.body)
+  //         .then((newUser) => {
+  //           req.session.userId = newUser._id;
+  //           res.json({ user: newUser });
+  //         })
+  //         .catch((err) => {
+  //           res.json({ errors: err });
+  //         });
+  //     })
+  //     .catch((hashingErr) => {
+  //       res.json({ errors: hashingErr });
+  //     });
+  // },
+
+
+  login(req, res) {
+    // console.log(req.body);
+    User.findOne({ email: req.body.email }, (err, user) => {
+      if(user == null) {
+        res.json({ errorMessage: "Invalid Credentials" });
+      } else {
+        bcrypt.compare(req.body.password, user.password, (err, result) => {
+          if(result) {
+            req.session.userId = user._id;
+            req.session.name = user._username;
+            res.json({successMessage: "Successful Login" });
+          } else {
+            res.json({ errorMessage: "Invalid Credentials" });
+          }
+        })
+      }
+    })
   },
 
   all(req, res) {
     User.find()
-        .then(user => res.json({ users: user, msg: 'User' }))
-        .catch(errors => res.json({ errors: errors }))
-},
+      .then(user => {
+        res.json({ users: user, msg: 'User' });
+      })
+      .catch(errors => {
+        console.log(errors);
+        res.json({ errors: errors });
+      })
+  },
 
 }

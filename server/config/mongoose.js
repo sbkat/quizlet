@@ -2,15 +2,11 @@ const mongoose = require('mongoose');
 const fs = require('fs');
 const path = require('path');
 
-mongoose.connect('mongodb://localhost/new_socket', { 
+mongoose.connect('mongodb://localhost/socket_trivia', { 
     useNewUrlParser: true, 
     useUnifiedTopology: true, 
     useFindAndModify: false, 
-    }, () => {
-        console.log('We are connected!')
-    })
-        .catch(err => console.log(err));
-
+    });
 
 const modelsPath = path.join(__dirname, '../models');
 
