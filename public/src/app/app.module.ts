@@ -10,6 +10,7 @@ import { LoginComponent } from './login/login.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { CreateQuizComponent } from './create-quiz/create-quiz.component';
 import { GamePlatformComponent } from './game-platform/game-platform.component';
+import { HomepageComponent } from './homepage/homepage.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { GamePlatformComponent } from './game-platform/game-platform.component';
     LoginComponent,
     DashboardComponent,
     CreateQuizComponent,
-    GamePlatformComponent
+    GamePlatformComponent,
+    HomepageComponent
   ],
   imports: [
     BrowserModule,
