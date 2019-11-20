@@ -1,64 +1,36 @@
 const mongoose = require('mongoose');
+const bcrypt = require('bcryptjs');
 const User = mongoose.model('User');
 
 module.exports = {
-    all(request, response) {
-      // find all
-      User.find()
-        .then((Users) => {
-          response.json({ Users: Users });
+  register(req, res) {
+    bcrypt.hash(req.body.password, 8, (err, hash) => {
+      if(err) {
+          res.json({ errors: err });
+      } else {
+        req.body.password = hash;
+        console.log('in the controller:', req.body);
+        User.create(req.body, (err, user) => {
+          if(err) {
+            res.json({ errors: err });
+          } else {
+            console.log('controller HERE:', user)
+            req.session.userId = user._id;
+            res.json(user);
+          }
         })
-        .catch((errors) => {
-          response.json({ errors: errors });
-        });
-    },
-  
-    create(request, response) {
-      User.create(request.body)
-        .then((newUser) => {
-          response.json({ User: newUser });
-        })
-        .catch((errors) => {
-          response.json({ errors: errors });
-        });
-    },
-  
-    getOne(request, response) {
-      User.findById(request.params.id)
-        .then((User) => {
-          response.json({ User: User });
-        })
-        .catch((errors) => {
-          response.json({ errors: errors });
-        });
-    },
-  
-    delete(request, response) {
-      User.findByIdAndDelete(request.params.id)
-        .then((deletedUser) => {
-          response.json({ User: deletedUser });
-        })
-        .catch((errors) => {
-          response.json({ errors: errors });
-        });
-    },
-  
-    update(request, response) {
-      User.findByIdAndUpdate(
-        request.params.id,
-        request.body,
-        {
-          runValidators: true,
-          // return the newly updated User
-          new: true
-        }
-      )
-        .then((updatedUser) => {
-          response.json({ User: updatedUser });
-        })
-        .catch((errors) => {
-          response.json({ errors: errors });
-        });
-    }
-  
-  }
+      }
+    })
+  },
+
+  login(req, res) {
+
+  },
+
+  all(req, res) {
+    User.find()
+        .then(user => res.json({ users: user, msg: 'User' }))
+        .catch(errors => res.json({ errors: errors }))
+},
+
+}

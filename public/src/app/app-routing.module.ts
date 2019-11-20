@@ -17,6 +17,7 @@ const routes: Routes = [
   { path: 'create-quiz', component: CreateQuizComponent },
   { path: 'homepage', component: HomepageComponent },
   { path: '', pathMatch: 'full', redirectTo: '/homepage' },
+  { path: '*', pathMatch: 'full', redirectTo: '/' },
 ];
 
 @NgModule({

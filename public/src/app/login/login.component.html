@@ -1,11 +1,11 @@
 <div>
-    <form (submit)="submitLogin()">
+    <form (submit)="login()">
         <h1>Login</h1>
         <label for="email">Email:</label>
-        <input type="email" name="email">
+        <input type="email" name="email" [(ngModel)]='loginUser.email'>
         <br>
         <label for="password">Password:</label>
-        <input type="password" name="password">
+        <input type="password" name="password" [(ngModel)]='loginUser.password'>
         <br>
         <br>
         <button type="submit">Let's go!</button>

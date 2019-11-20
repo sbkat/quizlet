@@ -97,7 +97,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div>\r\n    <form (submit)=\"submitLogin()\">\r\n        <h1>Login</h1>\r\n        <label for=\"email\">Email:</label>\r\n        <input type=\"email\" name=\"email\">\r\n        <br>\r\n        <label for=\"password\">Password:</label>\r\n        <input type=\"password\" name=\"password\">\r\n        <br>\r\n        <br>\r\n        <button type=\"submit\">Let's go!</button>\r\n    </form>\r\n    <p>Don't have an account? <a [routerLink]=\"['/signup']\">Sign up here</a></p>\r\n</div>");
+/* harmony default export */ __webpack_exports__["default"] = ("<div>\r\n    <form (submit)=\"login()\">\r\n        <h1>Login</h1>\r\n        <label for=\"email\">Email:</label>\r\n        <input type=\"email\" name=\"email\" [(ngModel)]='loginUser.email'>\r\n        <br>\r\n        <label for=\"password\">Password:</label>\r\n        <input type=\"password\" name=\"password\" [(ngModel)]='loginUser.password'>\r\n        <br>\r\n        <br>\r\n        <button type=\"submit\">Let's go!</button>\r\n    </form>\r\n    <p>Don't have an account? <a [routerLink]=\"['/signup']\">Sign up here</a></p>\r\n</div>");
 
 /***/ }),
 
@@ -110,7 +110,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div>\r\n    <form (submit)=\"submitReg()\">\r\n        <h1>Sign up!</h1>\r\n        <label for=\"username\">Username:</label>\r\n        <input type=\"text\" name=\"username\">\r\n        <br>\r\n        <label for=\"email\">Email:</label>\r\n        <input type=\"email\" name=\"email\">\r\n        <br>\r\n        <label for=\"password\">Password:</label>\r\n        <input type=\"password\" name=\"password\">\r\n        <br>\r\n        <button type=\"submit\">Submit</button>\r\n    </form>\r\n    <p>Already have an account? <a [routerLink]=\"['/login']\">Login here</a></p>\r\n</div>");
+/* harmony default export */ __webpack_exports__["default"] = ("<div>\r\n    <p *ngIf=\"errorMsg\" style=\"color:red\">\r\n      {{ errorMsg }}\r\n    </p>\r\n</div>\r\n<div>\r\n    <form (submit)=\"register()\">\r\n        <h1>Sign up!</h1>\r\n        <label for=\"username\">Username:</label>\r\n        <input type=\"text\" name=\"username\" [(ngModel)]='newUser.username'>\r\n        <br>\r\n        <label for=\"email\">Email:</label>\r\n        <input type=\"email\" name=\"email\" [(ngModel)]='newUser.email'>\r\n        <br>\r\n        <label for=\"password\">Password:</label>\r\n        <input type=\"password\" name=\"password\" [(ngModel)]='newUser.password'>\r\n        <br>\r\n        <button type=\"submit\">Submit</button>\r\n    </form>\r\n    <p>Already have an account? <a [routerLink]=\"['/login']\">Login here</a></p>\r\n</div>");
 
 /***/ }),
 
@@ -379,6 +379,7 @@ const routes = [
     { path: 'create-quiz', component: _create_quiz_create_quiz_component__WEBPACK_IMPORTED_MODULE_5__["CreateQuizComponent"] },
     { path: 'homepage', component: _homepage_homepage_component__WEBPACK_IMPORTED_MODULE_6__["HomepageComponent"] },
     { path: '', pathMatch: 'full', redirectTo: '/homepage' },
+    { path: '*', pathMatch: 'full', redirectTo: '/' },
 ];
 let AppRoutingModule = class AppRoutingModule {
 };
@@ -452,14 +453,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _http_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./http.service */ "./src/app/http.service.ts");
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
-/* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
-/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
-/* harmony import */ var _sign_up_sign_up_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./sign-up/sign-up.component */ "./src/app/sign-up/sign-up.component.ts");
-/* harmony import */ var _login_login_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./login/login.component */ "./src/app/login/login.component.ts");
-/* harmony import */ var _dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./dashboard/dashboard.component */ "./src/app/dashboard/dashboard.component.ts");
-/* harmony import */ var _create_quiz_create_quiz_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./create-quiz/create-quiz.component */ "./src/app/create-quiz/create-quiz.component.ts");
-/* harmony import */ var _game_platform_game_platform_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./game-platform/game-platform.component */ "./src/app/game-platform/game-platform.component.ts");
-/* harmony import */ var _homepage_homepage_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./homepage/homepage.component */ "./src/app/homepage/homepage.component.ts");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
+/* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
+/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./app.component */ "./src/app/app.component.ts");
+/* harmony import */ var _sign_up_sign_up_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./sign-up/sign-up.component */ "./src/app/sign-up/sign-up.component.ts");
+/* harmony import */ var _login_login_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./login/login.component */ "./src/app/login/login.component.ts");
+/* harmony import */ var _dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./dashboard/dashboard.component */ "./src/app/dashboard/dashboard.component.ts");
+/* harmony import */ var _create_quiz_create_quiz_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./create-quiz/create-quiz.component */ "./src/app/create-quiz/create-quiz.component.ts");
+/* harmony import */ var _game_platform_game_platform_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./game-platform/game-platform.component */ "./src/app/game-platform/game-platform.component.ts");
+/* harmony import */ var _homepage_homepage_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./homepage/homepage.component */ "./src/app/homepage/homepage.component.ts");
+
 
 
 
@@ -484,21 +487,22 @@ AppModule.ctorParameters = () => [
 AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["NgModule"])({
         declarations: [
-            _app_component__WEBPACK_IMPORTED_MODULE_6__["AppComponent"],
-            _sign_up_sign_up_component__WEBPACK_IMPORTED_MODULE_7__["SignUpComponent"],
-            _login_login_component__WEBPACK_IMPORTED_MODULE_8__["LoginComponent"],
-            _dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_9__["DashboardComponent"],
-            _create_quiz_create_quiz_component__WEBPACK_IMPORTED_MODULE_10__["CreateQuizComponent"],
-            _game_platform_game_platform_component__WEBPACK_IMPORTED_MODULE_11__["GamePlatformComponent"],
-            _homepage_homepage_component__WEBPACK_IMPORTED_MODULE_12__["HomepageComponent"]
+            _app_component__WEBPACK_IMPORTED_MODULE_7__["AppComponent"],
+            _sign_up_sign_up_component__WEBPACK_IMPORTED_MODULE_8__["SignUpComponent"],
+            _login_login_component__WEBPACK_IMPORTED_MODULE_9__["LoginComponent"],
+            _dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_10__["DashboardComponent"],
+            _create_quiz_create_quiz_component__WEBPACK_IMPORTED_MODULE_11__["CreateQuizComponent"],
+            _game_platform_game_platform_component__WEBPACK_IMPORTED_MODULE_12__["GamePlatformComponent"],
+            _homepage_homepage_component__WEBPACK_IMPORTED_MODULE_13__["HomepageComponent"]
         ],
         imports: [
             _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
-            _app_routing_module__WEBPACK_IMPORTED_MODULE_5__["AppRoutingModule"],
-            _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClientModule"]
+            _app_routing_module__WEBPACK_IMPORTED_MODULE_6__["AppRoutingModule"],
+            _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClientModule"],
+            _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormsModule"],
         ],
         providers: [_http_service__WEBPACK_IMPORTED_MODULE_3__["HttpService"]],
-        bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_6__["AppComponent"]]
+        bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_7__["AppComponent"]]
     })
 ], AppModule);
 
@@ -702,6 +706,13 @@ let HttpService = class HttpService {
     constructor(_http) {
         this._http = _http;
     }
+    register(newUser) {
+        console.log('in the service', newUser);
+        return this._http.post('/api/user', newUser);
+    }
+    all() {
+        return this._http.get('/api/users');
+    }
 };
 HttpService.ctorParameters = () => [
     { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] }
@@ -741,13 +752,26 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LoginComponent", function() { return LoginComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _http_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../http.service */ "./src/app/http.service.ts");
+
 
 
 let LoginComponent = class LoginComponent {
-    constructor() { }
+    constructor(_httpService) {
+        this._httpService = _httpService;
+    }
     ngOnInit() {
+        this.loginUser = {
+            email: '',
+            password: '',
+        };
+    }
+    login() {
     }
 };
+LoginComponent.ctorParameters = () => [
+    { type: _http_service__WEBPACK_IMPORTED_MODULE_2__["HttpService"] }
+];
 LoginComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-login',
@@ -785,13 +809,43 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SignUpComponent", function() { return SignUpComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _http_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../http.service */ "./src/app/http.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+
+
 
 
 let SignUpComponent = class SignUpComponent {
-    constructor() { }
+    constructor(_httpService, _router) {
+        this._httpService = _httpService;
+        this._router = _router;
+        this.errorMsg = [];
+    }
     ngOnInit() {
+        this.newUser = {
+            username: '',
+            email: '',
+            password: '',
+        };
+    }
+    register() {
+        console.log('in the component', this.newUser);
+        let obs = this._httpService.register(this.newUser);
+        obs.subscribe((data) => {
+            console.log('data:', data);
+            if (data.hasOwnProperty('errors')) {
+                this.errorMsg = data.errors.message;
+            }
+            else {
+                this._router.navigate(['/game-platform']);
+            }
+        });
     }
 };
+SignUpComponent.ctorParameters = () => [
+    { type: _http_service__WEBPACK_IMPORTED_MODULE_2__["HttpService"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"] }
+];
 SignUpComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-sign-up',
