@@ -9,12 +9,12 @@ import { Router } from '@angular/router';
 })
 
 export class SignUpComponent implements OnInit {
-  newUser: Object;
+  newUser: object;
   errorMsg: string[] = [];
 
   constructor(
-    private _httpService: HttpService,
-    private _router: Router,
+    private httpService: HttpService,
+    private router: Router,
     ) { }
 
   ngOnInit() {
@@ -22,18 +22,18 @@ export class SignUpComponent implements OnInit {
       username: '',
       email: '',
       password: '',
-    }
+    };
   }
 
   register() {
-    let obs = this._httpService.register(this.newUser);
+    const obs = this.httpService.register(this.newUser);
     obs.subscribe((data: any) => {
       console.log('data:', data);
       if (data.hasOwnProperty('errors')) {
         this.errorMsg = data.errors.message;
       } else {
-        this._router.navigate(['/dashboard']);
+        this.router.navigate(['/dashboard']);
       }
-    })
+    });
   }
 }

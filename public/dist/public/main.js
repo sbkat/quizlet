@@ -32,7 +32,7 @@ webpackEmptyAsyncContext.id = "./$$_lazy_route_resource lazy recursive";
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<!DOCTYPE html>\r\n<html lang=\"en\">\r\n<head>\r\n  <meta charset=\"UTF-8\">\r\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n  <meta http-equiv=\"X-UA-Compatible\" content=\"ie=edge\">\r\n  <title>Socket Trivia</title>\r\n</head>\r\n<body>\r\n  <nav>\r\n    <p>Already have a game PIN?</p>\r\n    <button [routerLink]=\"['/game-platform']\">Play now!</button>\r\n    <button [routerLink]=\"['/signup']\">Sign up!</button>\r\n    <button [routerLink]=\"['/login']\">Login</button>\r\n    <button [routerLink]=\"['/homepage']\">Home</button>\r\n  </nav>\r\n\r\n  <router-outlet></router-outlet>\r\n</body>\r\n</html>");
+/* harmony default export */ __webpack_exports__["default"] = ("<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <meta http-equiv=\"X-UA-Compatible\" content=\"ie=edge\">\n  <title>Socket Trivia</title>\n</head>\n<body>\n  <nav>\n    <p>Already have a game PIN?</p>\n    <button [routerLink]=\"['/game-platform']\">Play now!</button>\n    <button [routerLink]=\"['/signup']\">Sign up!</button>\n    <button [routerLink]=\"['/login']\">Login</button>\n    <button [routerLink]=\"['/homepage']\">Home</button>\n  </nav>\n\n  <router-outlet></router-outlet>\n</body>\n</html>");
 
 /***/ }),
 
@@ -45,7 +45,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<p>create-quiz works!</p>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<p>create-quiz works!</p>\n");
 
 /***/ }),
 
@@ -58,7 +58,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<h1>Hello, user!</h1>\r\n\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<h1>Hello, user!</h1>\n\n");
 
 /***/ }),
 
@@ -71,7 +71,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div>\r\n    <form (submit)=\"submitPlayer()\">\r\n        <h1>Enter your player info!</h1>\r\n        <label for=\"pin\">Game pin:</label>\r\n        <input type=\"pin\" name=\"pin\">\r\n        <br>\r\n        <label for=\"nickname\">Nickname:</label>\r\n        <input type=\"nickname\" name=\"nickname\">\r\n        <br>\r\n        <button type=\"submit\">Let's play!</button>\r\n    </form>\r\n</div>");
+/* harmony default export */ __webpack_exports__["default"] = ("<div>\n    <form (submit)=\"submitPlayer()\">\n        <h1>Enter your player info!</h1>\n        <label for=\"pin\">Game pin:</label>\n        <input type=\"pin\" name=\"pin\">\n        <br>\n        <label for=\"nickname\">Nickname:</label>\n        <input type=\"nickname\" name=\"nickname\">\n        <br>\n        <button type=\"submit\">Let's play!</button>\n    </form>\n</div>");
 
 /***/ }),
 
@@ -97,7 +97,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div>\r\n    <form (submit)=\"login()\">\r\n        <h1>Login</h1>\r\n        <label for=\"email\">Email:</label>\r\n        <input type=\"email\" name=\"email\" [(ngModel)]='loginUser.email'>\r\n        <br>\r\n        <label for=\"password\">Password:</label>\r\n        <input type=\"password\" name=\"password\" [(ngModel)]='loginUser.password'>\r\n        <br>\r\n        <br>\r\n        <button type=\"submit\">Let's go!</button>\r\n    </form>\r\n    <p>Don't have an account? <a [routerLink]=\"['/signup']\">Sign up here</a></p>\r\n</div>");
+/* harmony default export */ __webpack_exports__["default"] = ("<div>\n    <form (submit)=\"login()\">\n        <h1>Login</h1>\n        <label for=\"email\">Email:</label>\n        <input type=\"email\" name=\"email\" [(ngModel)]='loginUser.email'>\n        <br>\n        <label for=\"password\">Password:</label>\n        <input type=\"password\" name=\"password\" [(ngModel)]='loginUser.password'>\n        <br>\n        <br>\n        <button type=\"submit\">Let's go!</button>\n    </form>\n    <p>Don't have an account? <a [routerLink]=\"['/signup']\">Sign up here</a></p>\n</div>");
 
 /***/ }),
 
@@ -110,7 +110,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div>\r\n    <p *ngIf=\"errorMsg\" style=\"color:red\">\r\n      {{ errorMsg }}\r\n    </p>\r\n</div>\r\n<div>\r\n    <form (submit)=\"register()\">\r\n        <h1>Sign up!</h1>\r\n        <label for=\"username\">Username:</label>\r\n        <input type=\"text\" name=\"username\" [(ngModel)]='newUser.username'>\r\n        <br>\r\n        <label for=\"email\">Email:</label>\r\n        <input type=\"email\" name=\"email\" [(ngModel)]='newUser.email'>\r\n        <br>\r\n        <label for=\"password\">Password:</label>\r\n        <input type=\"password\" name=\"password\" [(ngModel)]='newUser.password'>\r\n        <br>\r\n        <button type=\"submit\">Submit</button>\r\n    </form>\r\n    <p>Already have an account? <a [routerLink]=\"['/login']\">Login here</a></p>\r\n</div>");
+/* harmony default export */ __webpack_exports__["default"] = ("<div>\n    <p *ngIf=\"errorMsg\" style=\"color:red\">\n      {{ errorMsg }}\n    </p>\n</div>\n<div>\n    <form (submit)=\"register()\">\n        <h1>Sign up!</h1>\n        <label for=\"username\">Username:</label>\n        <input type=\"text\" name=\"username\" [(ngModel)]='newUser.username'>\n        <br>\n        <label for=\"email\">Email:</label>\n        <input type=\"email\" name=\"email\" [(ngModel)]='newUser.email'>\n        <br>\n        <label for=\"password\">Password:</label>\n        <input type=\"password\" name=\"password\" [(ngModel)]='newUser.password'>\n        <br>\n        <button type=\"submit\">Submit</button>\n    </form>\n    <p>Already have an account? <a [routerLink]=\"['/login']\">Login here</a></p>\n</div>");
 
 /***/ }),
 
@@ -761,9 +761,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let LoginComponent = class LoginComponent {
-    constructor(_httpService, _router) {
-        this._httpService = _httpService;
-        this._router = _router;
+    constructor(httpService, router) {
+        this.httpService = httpService;
+        this.router = router;
         this.errorMsg = [];
     }
     ngOnInit() {
@@ -773,14 +773,14 @@ let LoginComponent = class LoginComponent {
         };
     }
     login() {
-        let obs = this._httpService.login(this.loginUser);
+        const obs = this.httpService.login(this.loginUser);
         obs.subscribe((data) => {
             console.log('data:', data);
             if (data.hasOwnProperty('errors')) {
                 this.errorMsg = data.errors.message;
             }
             else {
-                this._router.navigate(['/dashboard']);
+                this.router.navigate(['/dashboard']);
             }
         });
     }
@@ -833,9 +833,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let SignUpComponent = class SignUpComponent {
-    constructor(_httpService, _router) {
-        this._httpService = _httpService;
-        this._router = _router;
+    constructor(httpService, router) {
+        this.httpService = httpService;
+        this.router = router;
         this.errorMsg = [];
     }
     ngOnInit() {
@@ -846,14 +846,14 @@ let SignUpComponent = class SignUpComponent {
         };
     }
     register() {
-        let obs = this._httpService.register(this.newUser);
+        const obs = this.httpService.register(this.newUser);
         obs.subscribe((data) => {
             console.log('data:', data);
             if (data.hasOwnProperty('errors')) {
                 this.errorMsg = data.errors.message;
             }
             else {
-                this._router.navigate(['/dashboard']);
+                this.router.navigate(['/dashboard']);
             }
         });
     }
@@ -939,7 +939,7 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_2__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Kathy\Desktop\collab\socket_trivia\public\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! /Users/tony/Documents/code/projects/socket_trivia/public/src/main.ts */"./src/main.ts");
 
 
 /***/ })
