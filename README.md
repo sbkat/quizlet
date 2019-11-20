@@ -1,14 +1,6 @@
 #socket_trivia
 
-Open source "kahoot" app clone. To get started, clone GitHub repo and..
-
-In root folder:
-npm install socket.io-client
-npm install @types/socket.io-client
-npm install express mongoose
-
-In public folder:
-npm install 
+Open source "kahoot" app clone. To get started, clone GitHub repo and install dependencies listed in package.json
 
 Admin interface:
   - login/reg? 
