@@ -1,26 +1,44 @@
 const mongoose = require('mongoose')
 
 const QuizSchema = new mongoose.Schema({
+    // how we thought about it...
     title: {
         type: String,
-        required: [true, "is required"],
+        questions: [{
+            question: String,
+            required: [true, "is required"],
+            answers: [{
+                type: String,
+                required: [true, "is required"],
+                options: [{
+                    option: String,
+                    type: String,
+                    isCorrect: Boolean,
+                    isSelected: Boolean,
+                }],
+            }]
+        }]
     },
-    time: {
-        type: Number,
-        required: [true, "is required"],
-    },
-    question: [{
-        type: String,
-        required: [true, "is required"],
-    }],
-    answer: [{
-        type: String,
-        required: [true, "is required"],
-    }],
-    correct: {
-        type: Boolean,
-        required: [true, "is requied"],
-    },
+
+    // //     type: String,
+    // //     required: [true, "is required"],
+    // // },
+    // time: {
+    //     type: Number,
+    //     required: [true, "is required"],
+    // },
+    // question: [{
+    //     type: String,
+    //     required: [true, "is required"],
+    // }],
+    // answer: [{
+    //     type: String,
+    //     required: [true, "is required"],
+    // }],
+    // correct: {
+    //     type: String,
+    //     required: [true, "is requied"],
+    // },
 }, { timestamps: true });
 
 const UserSchema = new mongoose.Schema({
@@ -29,7 +47,7 @@ const UserSchema = new mongoose.Schema({
         required: [true, "is required"],
         minlength: [
             3,
-            "must be at least {MINLENGTH} characters."
+            " username must be at least {MINLENGTH} characters."
         ]
     },
     email: {

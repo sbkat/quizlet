@@ -11,8 +11,8 @@ export class DashboardComponent implements OnInit {
   currentUser: any;
 
   constructor(
-    private _httpService: HttpService,
-    private _router: Router,
+    private httpService: HttpService,
+    private router: Router,
     ) { }
 
   ngOnInit() {
@@ -20,13 +20,13 @@ export class DashboardComponent implements OnInit {
   }
 
   getCurrentUser() {
-    let obs = this._httpService.getCurrentUser();
+    const obs = this.httpService.getCurrentUser();
     obs.subscribe((data: any) => {
-      if(data.sessionStatus == false) {
-        this._router.navigate(['/']);
+      if (data.sessionStatus === false) {
+        this.router.navigate(['/']);
       } else {
         this.currentUser = data;
       }
-    })
+    });
   }
 }

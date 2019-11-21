@@ -6,7 +6,7 @@ import { HttpClient } from '@angular/common/http';
 })
 export class HttpService {
 
-  constructor(private _http: HttpClient){}
+  constructor(private _http: HttpClient) {}
 
   register(newUser) {
     return this._http.post('/api/register', newUser);
@@ -22,5 +22,9 @@ export class HttpService {
 
   all() {
     return this._http.get('/api/users');
+  }
+
+  createQuiz(id) {
+    return this._http.post('/api/createQuiz', id);
   }
 }

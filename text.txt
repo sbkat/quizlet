@@ -3,3 +3,33 @@ momentum.js for time
 socket.io-client
 socket.io
 axios
+
+quizschema example
+{
+    title: "how old is a fart?
+    questions: [{
+        question: "how is your?",
+        answers: [{
+            options: [{
+                option:  "3",
+                isCorrect: true,
+                isSelected: false
+            },
+            {
+                option:  "2",
+                isCorrect: false,
+                isSelected: false
+            },
+            {
+                option:  "5",
+                isCorrect: false,
+                isSelected: false
+            },
+            {
+                option:  "4",
+                isCorrect: false,
+                isSelected: false
+            }]
+        }]
+    }]
+}

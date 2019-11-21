@@ -45,7 +45,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<p>create-quiz works!</p>\n\n<form (submit)=\"createQuiz()\">\n    <h1>Sign up!</h1>\n    <label for=\"title\">Title:</label>\n    <input type=\"text\" name=\"title\" [(ngModel)]='newQuiz.title'>\n    <br>\n    <label for=\"email\">Email:</label>\n    <input type=\"text\" name=\"email\" [(ngModel)]='newQuiz.email'>\n    <br>\n    <label for=\"password\">Password:</label>\n    <input type=\"password\" name=\"password\" [(ngModel)]='newUser.password'>\n    <br>\n    <button type=\"submit\">Submit</button>\n</form>");
+/* harmony default export */ __webpack_exports__["default"] = ("<h3>Create your Quiz</h3>\n<p *ngIf=\"errorMsg\" style=\"color:red\">\n    {{ errorMsg }}\n</p>\n<form (submit)=\"createQuiz()\">\n    {{ newQuiz | json}}\n    <br>\n    <label for=\"title\">Title:</label>\n    <input type=\"text\" name=\"title\" [(ngModel)]='newQuiz.title'>\n    <br>\n    <label for=\"question\">Question:</label>\n    <input type=\"text\" name=\"question\" [(ngModel)]='newQuiz.question'>\n    <select name=\"answer\" [(ngModel)]='newQuiz.corrext'>\n        <option isSelected=\"false\" isCorrect=\"false\">wrong</option>\n        <option isSelected=\"false\" isCorrect=true>correct</option>\n        <option isSelected=\"false\" isCorrect=\"false\">asdf</option>\n        <option isSelected=\"false\" isCorrect=\"false\">asddf</option>\n    </select>\n    <button type=\"submit\">Submit</button>\n</form>");
 
 /***/ }),
 
@@ -58,7 +58,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<h1>Hello, {{ currentUser.username }}!</h1>\n\n\n<div>\n    <!-- Available Quizzes list -->\n    <div>\n        <!-- for loop through db for created quizzes -->\n        <!-- (quiz api) -->\n        <h3>Available quizzes:</h3>\n        <ul>\n            <li></li>\n            <li></li>\n            <li></li>\n            <li></li>\n        </ul>\n    </div>\n    <!-- Create quiz form -->\n    <div>\n        <app-create-quiz></app-create-quiz>\n    </div>\n</div>");
+/* harmony default export */ __webpack_exports__["default"] = ("<h1>Hello, {{ currentUser.username }}!</h1>\n\n\n<div>\n    <!-- Available Quizzes list -->\n    <div>\n        <!-- for loop through db for created quizzes -->\n        <!-- (quiz api) -->\n        <h3>Available quizzes:</h3>\n        <ul>\n            <li>quiz 1</li>\n            <li>quiz 2</li>\n            <li>quiz 3</li>\n            <li>quiz 4</li>\n        </ul>\n    </div>\n    <!-- Create quiz form -->\n    <div>\n        <app-create-quiz></app-create-quiz>\n    </div>\n</div>");
 
 /***/ }),
 
@@ -535,13 +535,44 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CreateQuizComponent", function() { return CreateQuizComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _http_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../http.service */ "./src/app/http.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+
+
 
 
 let CreateQuizComponent = class CreateQuizComponent {
-    constructor() { }
+    constructor(httpService, router) {
+        this.httpService = httpService;
+        this.router = router;
+        this.errorMsg = [];
+    }
     ngOnInit() {
+        this.newQuiz = {
+            title: '',
+            // time: '',
+            question: [],
+            answer: [],
+            correct: '',
+        };
+    }
+    createQuiz() {
+        const obs = this.httpService.createQuiz(this.newQuiz);
+        obs.subscribe((data) => {
+            console.log('Dataaa: ', data);
+            if (data.hasOwnProperties('errors')) {
+                this.errorMsg = data.errors.message;
+            }
+            else {
+                this.router.navigate(['/dashboard']);
+            }
+        });
     }
 };
+CreateQuizComponent.ctorParameters = () => [
+    { type: _http_service__WEBPACK_IMPORTED_MODULE_2__["HttpService"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"] }
+];
 CreateQuizComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-create-quiz',
@@ -586,18 +617,18 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let DashboardComponent = class DashboardComponent {
-    constructor(_httpService, _router) {
-        this._httpService = _httpService;
-        this._router = _router;
+    constructor(httpService, router) {
+        this.httpService = httpService;
+        this.router = router;
     }
     ngOnInit() {
         this.getCurrentUser();
     }
     getCurrentUser() {
-        let obs = this._httpService.getCurrentUser();
+        const obs = this.httpService.getCurrentUser();
         obs.subscribe((data) => {
-            if (data.sessionStatus == false) {
-                this._router.navigate(['/']);
+            if (data.sessionStatus === false) {
+                this.router.navigate(['/']);
             }
             else {
                 this.currentUser = data;
@@ -646,13 +677,41 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GamePlatformComponent", function() { return GamePlatformComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _http_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../http.service */ "./src/app/http.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+
+
 
 
 let GamePlatformComponent = class GamePlatformComponent {
-    constructor() { }
+    constructor(httpService, router) {
+        this.httpService = httpService;
+        this.router = router;
+        this.errorMsg = [];
+    }
     ngOnInit() {
+        this.newJoiner = {
+            pin: Number,
+            username: String,
+        };
+    }
+    submitPlayer() {
+        const obs = this.httpService.createQuiz(this.newJoiner);
+        obs.subscribe((data) => {
+            console.log('Dataaa: ', data);
+            if (data.hasOwnProperties('errors')) {
+                this.errorMsg = data.errors.message;
+            }
+            else {
+                this.router.navigate(['/dashboard']);
+            }
+        });
     }
 };
+GamePlatformComponent.ctorParameters = () => [
+    { type: _http_service__WEBPACK_IMPORTED_MODULE_2__["HttpService"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"] }
+];
 GamePlatformComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-game-platform',
@@ -740,6 +799,9 @@ let HttpService = class HttpService {
     }
     all() {
         return this._http.get('/api/users');
+    }
+    createQuiz(id) {
+        return this._http.post('/api/createQuiz', id);
     }
 };
 HttpService.ctorParameters = () => [
