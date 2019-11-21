@@ -1,1 +1,15 @@
 <p>create-quiz works!</p>
+
+<form (submit)="createQuiz()">
+    <h1>Sign up!</h1>
+    <label for="title">Title:</label>
+    <input type="text" name="title" [(ngModel)]='newQuiz.title'>
+    <br>
+    <label for="email">Email:</label>
+    <input type="text" name="email" [(ngModel)]='newQuiz.email'>
+    <br>
+    <label for="password">Password:</label>
+    <input type="password" name="password" [(ngModel)]='newUser.password'>
+    <br>
+    <button type="submit">Submit</button>
+</form>

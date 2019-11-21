@@ -17,6 +17,10 @@ const QuizSchema = new mongoose.Schema({
         type: String,
         required: [true, "is required"],
     }],
+    correct: {
+        type: Boolean,
+        required: [true, "is requied"],
+    },
 }, { timestamps: true });
 
 const UserSchema = new mongoose.Schema({
