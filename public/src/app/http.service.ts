@@ -23,4 +23,12 @@ export class HttpService {
   all() {
     return this._http.get('/api/users');
   }
+
+  createQuiz(newQuiz) {
+    return this._http.post('/api/create-quiz', newQuiz);
+  }
+
+  allQuizzes() {
+    return this._http.get('/api/quizzes');
+  }
 }

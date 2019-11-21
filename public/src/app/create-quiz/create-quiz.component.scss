@@ -1,0 +1,10 @@
+@import '../../styles.scss';
+
+.form {
+    border: 1px solid $secondary-color;
+    padding: 20px;
+}
+
+input {
+    width: 90%;
+}

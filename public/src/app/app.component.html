@@ -9,15 +9,13 @@
 </head>
 
 <body>
-  <div>
-      <p>Already have a game PIN?</p>
-      <br>
-      <button [routerLink]="['/game-platform']" class="button">Play now!</button>
-      <button [routerLink]="['/signup']">Sign up!</button>
-      <button [routerLink]="['/login']">Login</button>
-      <button [routerLink]="['/homepage']">Home</button>
+  <div class="navbar">
+      <button [routerLink]="['/homepage']" class="l-button">Home</button>
+      <button [routerLink]="['/game-platform']" class="l-button">Play now!</button>
+      <button [routerLink]="['/signup']" class="r-button">Sign up!</button>
+      <button [routerLink]="['/login']" class="r-button">Login</button>
   </div>
-  <div>
+  <div class="router-outlet">
     <router-outlet></router-outlet>
   </div>
 </body>

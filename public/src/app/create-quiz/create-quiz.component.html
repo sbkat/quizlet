@@ -1,30 +1,27 @@
-<form (submit)="createQuiz">
-    <label for="title">Title:</label><br>
-    <input type="text" name="title"><br>
-    <label for="question">Question:</label><br>
-    <input type="text" name="question1"><br>
-    <input type="text" name="option1" placeholder="correct answer here"><br>
-    <input type="text" name="option1" placeholder="incorrect answer here"><br>
-    <input type="text" name="option1" placeholder="incorrect answer here"><br>
-    <input type="text" name="option1" placeholder="incorrect answer here"><br>
+<div class="form">
+    <p *ngIf="errorMsg" style="color:red">
+        {{ errorMsg }}
+    </p>
+    <form (submit)="createQuiz()">
+        <h3>Create your own quiz~</h3>
+        <label for="title">Title:</label><br>
+        <input type="text" name="title" [(ngModel)]='newQuiz.title'><br>
 
-    <label for="question">Question:</label><br>
-    <input type="text" name="question2"><br>
-    <input type="text" name="option2" placeholder="correct answer here"><br>
-    <input type="text" name="option2" placeholder="incorrect answer here"><br>
-    <input type="text" name="option2" placeholder="incorrect answer here"><br>
-    <input type="text" name="option2" placeholder="incorrect answer here"><br>
+        <div *ngFor="let newQuestion of newQuiz.questions; let i = index">
+            <label for="question">Question {{i+1}}:</label><br>
+            <input type="text" name="question{{i}}" placeholder="Enter your question here"
+                [(ngModel)]='newQuiz.questions[i].question'><br>
+            <input type="text" name="option-{{i}}a" placeholder="Correct answer here"
+                [(ngModel)]='newQuiz.questions[i].options[0]'><br>
+            <input type="text" name="option-{{i}}b" placeholder="Incorrect answer here"
+                [(ngModel)]='newQuiz.questions[i].options[1]'><br>
+            <input type="text" name="option-{{i}}c" placeholder="Incorrect answer here"
+                [(ngModel)]='newQuiz.questions[i].options[2]'><br>
+            <input type="text" name="option-{{i}}d" placeholder="Incorrect answer here"
+                [(ngModel)]='newQuiz.questions[i].options[3]'><br>
+        </div>
 
-    <label for="question">Question:</label><br>
-    <input type="text" name="question3"><br>
-    <input type="text" name="option3" placeholder="correct answer here"><br>
-    <input type="text" name="option3" placeholder="incorrect answer here"><br>
-    <input type="text" name="option3" placeholder="incorrect answer here"><br>
-    <input type="text" name="option3" placeholder="incorrect answer here"><br>
-    <button type="submit">Create quiz</button>
-</form>
-
-
-
-
-
+        <button (click)="additionalQuestion()" type="button">Add a question</button>
+        <button type="submit">Create quiz</button>
+    </form>
+</div>

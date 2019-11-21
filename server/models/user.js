@@ -5,19 +5,21 @@ const QuizSchema = new mongoose.Schema({
         type: String,
         required: [true, "is required"],
     },
-    time: {
-        type: Number,
+    questions: [{
+        type: Object,
         required: [true, "is required"],
-    },
-    question: [{
-        type: String,
-        required: [true, "is required"],
-    }],
-    answer: [{
-        type: String,
-        required: [true, "is required"],
-    }],
-}, { timestamps: true });
+        question: {
+            type: String,
+            required: [true, "is required"],
+        },
+        options: [{
+            type: Array,
+            required: [true, "is required"],
+        }],
+    }]
+}, 
+    { timestamps: true },
+)
 
 const UserSchema = new mongoose.Schema({
     username: {

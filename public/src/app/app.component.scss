@@ -1,10 +1,8 @@
 @import '../styles.scss';
 
-body {
-    @include flexCenter();
-    // background: url('/public/src/assets/bokeh.jpg') no-repeat center center fixed;
-    // height: 100vh;
-}
+// .router-outlet {
+//     @include flexCenter();
+// }
 
 p {
     @include inline();
@@ -12,4 +10,20 @@ p {
 
 .button {
     @include inline();
+}
+
+.l-button {
+    float: left;
+}
+
+.r-button {
+    float: right;
+}
+
+body {
+    padding: 20px;
+}
+
+.navbar {
+    display: block;
 }
