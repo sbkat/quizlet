@@ -8,31 +8,31 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.sass']
 })
 export class LoginComponent implements OnInit {
-  loginUser: Object;
+  loginUser: object;
   errorMsg: string[] = [];
 
   constructor(
-    private _httpService: HttpService,
-    private _router: Router,
+    private httpService: HttpService,
+    private router: Router,
     ) { }
 
   ngOnInit() {
     this.loginUser = {
       email: '',
       password: '',
-    }
+    };
   }
 
   login() {
-    let obs = this._httpService.login(this.loginUser);
+    const obs = this.httpService.login(this.loginUser);
     obs.subscribe((data: any) => {
       console.log('data:', data);
       if (data.errorMessage) {
         this.errorMsg = data.errorMessage;
       } else {
-        this._router.navigate(['/dashboard']);
+        this.router.navigate(['/dashboard']);
       }
-    })
+    });
   }
 
 }

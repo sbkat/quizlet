@@ -787,9 +787,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let LoginComponent = class LoginComponent {
-    constructor(_httpService, _router) {
-        this._httpService = _httpService;
-        this._router = _router;
+    constructor(httpService, router) {
+        this.httpService = httpService;
+        this.router = router;
         this.errorMsg = [];
     }
     ngOnInit() {
@@ -799,14 +799,14 @@ let LoginComponent = class LoginComponent {
         };
     }
     login() {
-        let obs = this._httpService.login(this.loginUser);
+        const obs = this.httpService.login(this.loginUser);
         obs.subscribe((data) => {
             console.log('data:', data);
             if (data.errorMessage) {
                 this.errorMsg = data.errorMessage;
             }
             else {
-                this._router.navigate(['/dashboard']);
+                this.router.navigate(['/dashboard']);
             }
         });
     }
@@ -859,9 +859,9 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let SignUpComponent = class SignUpComponent {
-    constructor(_httpService, _router) {
-        this._httpService = _httpService;
-        this._router = _router;
+    constructor(httpService, router) {
+        this.httpService = httpService;
+        this.router = router;
         this.errorMsg = [];
     }
     ngOnInit() {
@@ -872,14 +872,14 @@ let SignUpComponent = class SignUpComponent {
         };
     }
     register() {
-        let obs = this._httpService.register(this.newUser);
+        const obs = this.httpService.register(this.newUser);
         obs.subscribe((data) => {
             console.log('data:', data);
             if (data.hasOwnProperty('errors')) {
                 this.errorMsg = data.errors.message;
             }
             else {
-                this._router.navigate(['/dashboard']);
+                this.router.navigate(['/dashboard']);
             }
         });
     }
