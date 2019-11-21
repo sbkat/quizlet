@@ -1,4 +1,18 @@
+@import '../styles.scss';
+
+.background {
+    background-image: url('/public/src/assets/bokeh.jpg');
+}
+
+body {
+    @include flexCenter();
+}
+
+p {
+    @include inline();
+}
+
+
 .button {
-    background-color: white;
-    border-radius: 5px;
+    @include inline();
 }

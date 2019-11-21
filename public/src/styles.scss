@@ -1,1 +1,45 @@
-/* You can add global styles to this file, and also import other style files */
+$primary-font: 'Julius Sans One', sans-serif;
+$secondary-font: 'Raleway', sans-serif;
+$tertiary-font: 'Open Sans', sans-serif;
+
+$primary-color: rgb(20, 18, 18);
+$secondary-color: rgb(161, 159, 159);
+$tertiary-color: rgb(255, 255, 255);
+
+@mixin flexCenter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin inline {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+@mixin block {
+    display: block;
+    vertical-align: top;
+}
+
+html, body, app-root {
+    background-color: $primary-color;
+    height: 100%;
+    margin: 0;
+}
+
+* {
+    font-family: $secondary-font;
+    color: $tertiary-color;
+    input {
+        color: black;
+    }
+}
+
+button {
+    border: 1px solid $tertiary-color;
+    background-color: $tertiary-color;
+    color: $primary-color;
+    border-radius: 5px;
+    margin: 5px;
+}
