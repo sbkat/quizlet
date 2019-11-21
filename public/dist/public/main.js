@@ -45,7 +45,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<p>create-quiz works!</p>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<p>create-quiz works!</p>\r\nworks");
 
 /***/ }),
 
@@ -84,7 +84,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div>\n    <h1>Welcome to Socket Trivia!</h1>\n    <p>A fun and interactive learning platform to get your audience engaged!</p>\n</div>");
+/* harmony default export */ __webpack_exports__["default"] = ("<div>\r\n    <h1>Welcome to Socket Trivia!</h1>\r\n    <p>A fun and interactive learning platform to get your audience engaged!</p>\r\n</div>");
 
 /***/ }),
 
