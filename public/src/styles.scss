@@ -7,6 +7,7 @@ $secondary-color: rgb(161, 159, 159);
 $tertiary-color: rgb(255, 255, 255);
 
 @mixin flexCenter {
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;

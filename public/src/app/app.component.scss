@@ -1,17 +1,14 @@
 @import '../styles.scss';
 
-.background {
-    background-image: url('/public/src/assets/bokeh.jpg');
-}
-
 body {
     @include flexCenter();
+    // background: url('/public/src/assets/bokeh.jpg') no-repeat center center fixed;
+    // height: 100vh;
 }
 
 p {
     @include inline();
 }
-
 
 .button {
     @include inline();
