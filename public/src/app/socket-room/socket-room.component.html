@@ -1,15 +1,17 @@
 <p>socket-room works!</p>
 <div>
-    <h4>Question 1: {{}}</h4>
-    <textarea class="answer" [(ngModel)]='quiz.quiz' (keyup)='editQuiz()' placeholder='Whats your answer?'></textarea>
-    <h4>Question 2: {{}}</h4>
-    <textarea class="answer" [(ngModel)]='quiz.quiz' (keyup)='editQuiz()' placeholder='Whats your answer?'></textarea>
-    <h4>Question 3: {{}}</h4>
-    <textarea class="answer" [(ngModel)]='quiz.quiz' (keyup)='editQuiz()' placeholder='Whats your answer?'></textarea>
-    <h4>Question 4: {{}}</h4>
-    <textarea class="answer" [(ngModel)]='quiz.quiz' (keyup)='editQuiz()' placeholder='Whats your answer?'></textarea>
-    <h4>Question 5: {{}}</h4>
-    <textarea class="answer" [(ngModel)]='quiz.quiz' (keyup)='editQuiz()' placeholder='Whats your answer?'></textarea>
+    <h4>Quiz: {{ quizToShow.title }}</h4>
+    <ul *ngFor="let question of allQuestions">
+        <li> <u>{{ question.question }}</u>
+            <hr>
+            <ul *ngFor="let answer of answers">
+                <li> {{ answer }}</li>
+        
+            </ul>
+        </li>
 
+    </ul>
+    <!-- <textarea class="answer" [(ngModel)]='quiz.quiz' (keyup)='editQuiz()' placeholder='Whats your answer?'></textarea> -->
+    
 </div>
 

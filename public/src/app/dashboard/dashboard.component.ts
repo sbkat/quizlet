@@ -10,6 +10,7 @@ import { Router } from '@angular/router';
 export class DashboardComponent implements OnInit {
   currentUser: any;
   allQuiz: any[] = []
+  activeQuiz = null;
 
   constructor(
     private _httpService: HttpService,
@@ -45,6 +46,12 @@ export class DashboardComponent implements OnInit {
 
   closeNav() {
     document.getElementById("mySidenav").style.width = "0";
+  }
+
+  setActiveQuiz(activeQuiz) {
+    this.activeQuiz = activeQuiz;
+    console.log(activeQuiz)
+
   }
   
 }

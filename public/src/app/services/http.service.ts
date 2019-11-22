@@ -36,4 +36,9 @@ export class HttpService {
     
     return this._http.get('/api/quizzes/' + id)
   }
+
+  getQuestionsForQuiz(id: string) {
+
+    return this._http.get('/api/quizes/' + id)
+  }
 }
