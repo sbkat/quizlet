@@ -3,20 +3,12 @@
 <span (click)="openNav()" class="clickToOpenNav">&#9776; Available Quizzes</span>
 
 <div id="mySidenav" class="sidenav">
-    <a href="javascript:void(0)" class="closebtn" (click)="closeNav()">&times;</a>
-    <h3>Available Quizzes</h3>
-    <ul *ngFor="let quiz of allQuiz">
-<<<<<<< HEAD
-        <li>
-            <a [routerLink]="">{{ quiz.title }}</a> 
-            <button  (click)="setActiveQuiz(quiz)">Nested Show quiz To Emit</button>        
-
-        </li>
-=======
-        <li><a (click)="editQuiz(quiz._id)">{{ quiz.title }}</a></li>
->>>>>>> 565db732aae07e028281ebc2c0ed9a0d00a8c921
-    </ul>
-</div>
+        <a href="javascript:void(0)" class="closebtn" (click)="closeNav()">&times;</a>
+        <h3>Available Quizzes</h3>
+        <ul *ngFor="let quiz of allQuiz">
+            <li><a (click)="editQuiz(quiz._id)">{{ quiz.title }}</a></li>
+        </ul>
+    </div>
 
 
 <div class="component">

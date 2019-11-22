@@ -48,15 +48,8 @@ export class DashboardComponent implements OnInit {
     document.getElementById("mySidenav").style.width = "0";
   }
 
-<<<<<<< HEAD
-  setActiveQuiz(activeQuiz) {
-    this.activeQuiz = activeQuiz;
-    console.log(activeQuiz)
-
-=======
   editQuiz(quizId: string) {
     this._router.navigate(['/edit/' + quizId]);
->>>>>>> 565db732aae07e028281ebc2c0ed9a0d00a8c921
   }
   
 }

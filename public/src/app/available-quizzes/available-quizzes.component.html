@@ -1,0 +1,9 @@
+<div *ngIf="showQuiz">
+        <p>Quiz Title: {{ showQuiz.title }}</p>
+        <div *ngFor="let question of showQuiz.questions; let i = index">
+        <p>Question: {{ showQuiz.questions[i].question }}</p>
+        <p>a.) {{ showQuiz.questions[i].options[0] }}</p>
+        <p>b.) {{ showQuiz.questions[i].options[1] }}</p>
+        <p>c.) {{ showQuiz.questions[i].options[2] }}</p>
+        <p>d.) {{ showQuiz.questions[i].options[3] }}</p>
+    </div>

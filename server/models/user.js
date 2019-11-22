@@ -15,6 +15,12 @@ const QuizSchema = new mongoose.Schema({
         options: [{
             type: Array,
             required: [true, "is required"],
+            option: {
+                type: Boolean,
+                required: false,
+                default: false,
+
+            }
         }],
     }]
 }, 

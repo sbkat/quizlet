@@ -1,14 +1,14 @@
-
-<span (click)="openNav()" class="clickToOpenNav">&#9776; Available Quizzes</span>
-
-<div id="mySidenav" class="sidenav">
-    <a href="javascript:void(0)" class="closebtn" (click)="closeNav()">&times;</a>
-    <h3>Available Quizzes</h3>
-    <ul *ngFor="let quiz of quizes">
-        <li><a [routerLink]="">{{ quiz.title }}</a></li>
-    </ul>
-</div>
-
 <div class="component">
-    <app-socket-room></app-socket-room>
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" (click)="closeNav()">&times;</a>
+        <h3>Available Quizzes</h3>
+        <ul *ngFor="let quiz of quizes">
+            <li><a [routerLink]="['available', quiz._id]">{{ quiz.title }}</a></li>
+        </ul>
+    </div>
+    <div class="component">
+        <span (click)="openNav()">&#9776; Available Quizzes</span>
+        <br><br>
+        <router-outlet></router-outlet>
+    </div>
 </div>

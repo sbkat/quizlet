@@ -1,30 +1,12 @@
 <p>socket-room works!</p>
-<div>
-<<<<<<< HEAD
-    <h4>Quiz: {{ quizToShow.title }}</h4>
-    <ul *ngFor="let question of quizToShow.questions">
-        <li> <b>{{ question[0].question }}</b>
-            <hr>
-            <ul *ngFor="let answer of quizToShow.questions[0].options">
-                <!-- <li (click)  > {{ answer }}</li> -->
-        
-            </ul>
-        </li>
-    </ul>
-        <!-- <textarea class="answer" [(ngModel)]='quiz.quiz' (keyup)='editQuiz()' placeholder='Any notes?'></textarea> -->
-    
-=======
-    <!-- <h4>Question 1: {{}}</h4>
-    <textarea class="answer" [(ngModel)]='quiz.quiz' (keyup)='editQuiz()' placeholder='Whats your answer?'></textarea>
-    <h4>Question 2: {{}}</h4>
-    <textarea class="answer" [(ngModel)]='quiz.quiz' (keyup)='editQuiz()' placeholder='Whats your answer?'></textarea>
-    <h4>Question 3: {{}}</h4>
-    <textarea class="answer" [(ngModel)]='quiz.quiz' (keyup)='editQuiz()' placeholder='Whats your answer?'></textarea>
-    <h4>Question 4: {{}}</h4>
-    <textarea class="answer" [(ngModel)]='quiz.quiz' (keyup)='editQuiz()' placeholder='Whats your answer?'></textarea>
-    <h4>Question 5: {{}}</h4>
-    <textarea class="answer" [(ngModel)]='quiz.quiz' (keyup)='editQuiz()' placeholder='Whats your answer?'></textarea> -->
 
->>>>>>> 565db732aae07e028281ebc2c0ed9a0d00a8c921
-</div>
+<div *ngIf="quizToShow">
+        <p>Quiz Title: {{ quizToShow.title }}</p>
+        <div *ngFor="let question of quizToShow.questions; let i = index">
+        <p>Question: {{ quizToShow.questions[i].question }}</p>
+        <p>a.) {{ quizToShow.questions[i].options[0] }}</p>
+        <p>b.) {{ quizToShow.questions[i].options[1] }}</p>
+        <p>c.) {{ quizToShow.questions[i].options[2] }}</p>
+        <p>d.) {{ quizToShow.questions[i].options[3] }}</p>
+    </div>
 

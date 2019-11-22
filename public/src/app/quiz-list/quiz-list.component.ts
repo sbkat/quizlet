@@ -50,8 +50,4 @@ export class QuizListComponent implements OnInit, OnDestroy {
     document.getElementById("mySidenav").style.width = "0";
   }
 
-  // newDoc() {
-  //   this.webSocketService.newQuiz();
-  // }
-
 }
