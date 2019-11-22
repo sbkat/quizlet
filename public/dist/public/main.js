@@ -149,7 +149,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<p>socket-room works!</p>\r\n<textarea [(ngModel)]='quiz.quiz' (keyup)='editQuiz()' placeholder='Whats your answer?'></textarea>\r\n\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<p>socket-room works!</p>\r\n<div>\r\n    <h4>Question 1: {{}}</h4>\r\n    <textarea class=\"answer\" [(ngModel)]='quiz.quiz' (keyup)='editQuiz()' placeholder='Whats your answer?'></textarea>\r\n    <h4>Question 2: {{}}</h4>\r\n    <textarea class=\"answer\" [(ngModel)]='quiz.quiz' (keyup)='editQuiz()' placeholder='Whats your answer?'></textarea>\r\n    <h4>Question 3: {{}}</h4>\r\n    <textarea class=\"answer\" [(ngModel)]='quiz.quiz' (keyup)='editQuiz()' placeholder='Whats your answer?'></textarea>\r\n    <h4>Question 4: {{}}</h4>\r\n    <textarea class=\"answer\" [(ngModel)]='quiz.quiz' (keyup)='editQuiz()' placeholder='Whats your answer?'></textarea>\r\n    <h4>Question 5: {{}}</h4>\r\n    <textarea class=\"answer\" [(ngModel)]='quiz.quiz' (keyup)='editQuiz()' placeholder='Whats your answer?'></textarea>\r\n\r\n</div>\r\n\r\n");
 
 /***/ }),
 
