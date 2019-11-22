@@ -1,5 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Observable, Subscription } from 'rxjs';
+import { Router } from '@angular/router';
 
 import { WebsocketService } from 'src/app/services/websocket.service';
 import { HttpService } from '../services/http.service';
@@ -17,6 +18,7 @@ export class QuizListComponent implements OnInit, OnDestroy {
   constructor(
     private webSocketService: WebsocketService,
     private httpService: HttpService,
+    private _router: Router,
     ) { }
 
   ngOnInit() {

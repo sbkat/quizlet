@@ -45,7 +45,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("");
+/* harmony default export */ __webpack_exports__["default"] = ("<div *ngIf=\"showQuiz\">\r\n    <p>Quiz Title: {{ showQuiz.title }}</p>\r\n    <div *ngFor=\"let question of showQuiz.questions; let i = index\">\r\n    <p>Question: {{ showQuiz.questions[i].question }}</p>\r\n    <p>a.) {{ showQuiz.questions[i].options[0] }}</p>\r\n    <p>b.) {{ showQuiz.questions[i].options[1] }}</p>\r\n    <p>c.) {{ showQuiz.questions[i].options[2] }}</p>\r\n    <p>d.) {{ showQuiz.questions[i].options[3] }}</p>\r\n</div>");
 
 /***/ }),
 
@@ -84,7 +84,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"form\">\n        <p *ngIf=\"errorMsg\" style=\"color:red\">\n            {{ errorMsg }}\n        </p>\n        <form (submit)=\"submitEdit()\">\n            <h3>Edit this quiz~</h3>\n            <label for=\"title\">Title:</label><br>\n            <input type=\"text\" name=\"title\" [(ngModel)]='editQuiz.title'><br>\n    \n            <div *ngFor=\"let editQuestion of editQuiz.questions; let i = index\">\n                <label for=\"question\">Question {{i+1}}:</label><br>\n                <input type=\"text\" name=\"question{{i}}\" placeholder=\"Enter your question here\"\n                    [(ngModel)]='editQuiz.questions[i].question'><br>\n                <input type=\"text\" name=\"option-{{i}}a\" placeholder=\"Correct answer here\"\n                    [(ngModel)]='editQuiz.questions[i].options[0]'><br>\n                <input type=\"text\" name=\"option-{{i}}b\" placeholder=\"Incorrect answer here\"\n                    [(ngModel)]='editQuiz.questions[i].options[1]'><br>\n                <input type=\"text\" name=\"option-{{i}}c\" placeholder=\"Incorrect answer here\"\n                    [(ngModel)]='editQuiz.questions[i].options[2]'><br>\n                <input type=\"text\" name=\"option-{{i}}d\" placeholder=\"Incorrect answer here\"\n                    [(ngModel)]='editQuiz.questions[i].options[3]'><br>\n            </div>\n    \n            <button (click)=\"additionalQuestion()\" type=\"button\">Add a question</button>\n            <button type=\"submit\">Update quiz</button>\n        </form>\n    </div>");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"form\">\r\n        <p *ngIf=\"errorMsg\" style=\"color:red\">\r\n            {{ errorMsg }}\r\n        </p>\r\n        <form (submit)=\"submitEdit()\">\r\n            <h3>Edit this quiz~</h3>\r\n            <label for=\"title\">Title:</label><br>\r\n            <input type=\"text\" name=\"title\" [(ngModel)]='editQuiz.title'><br>\r\n    \r\n            <div *ngFor=\"let editQuestion of editQuiz.questions; let i = index\">\r\n                <label for=\"question\">Question {{i+1}}:</label><br>\r\n                <input type=\"text\" name=\"question{{i}}\" placeholder=\"Enter your question here\"\r\n                    [(ngModel)]='editQuiz.questions[i].question'><br>\r\n                <input type=\"text\" name=\"option-{{i}}a\" placeholder=\"Correct answer here\"\r\n                    [(ngModel)]='editQuiz.questions[i].options[0]'><br>\r\n                <input type=\"text\" name=\"option-{{i}}b\" placeholder=\"Incorrect answer here\"\r\n                    [(ngModel)]='editQuiz.questions[i].options[1]'><br>\r\n                <input type=\"text\" name=\"option-{{i}}c\" placeholder=\"Incorrect answer here\"\r\n                    [(ngModel)]='editQuiz.questions[i].options[2]'><br>\r\n                <input type=\"text\" name=\"option-{{i}}d\" placeholder=\"Incorrect answer here\"\r\n                    [(ngModel)]='editQuiz.questions[i].options[3]'><br>\r\n            </div>\r\n    \r\n            <button (click)=\"additionalQuestion()\" type=\"button\">Add a question</button>\r\n            <button type=\"submit\">Update quiz</button>\r\n        </form>\r\n    </div>");
 
 /***/ }),
 
@@ -136,7 +136,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\r\n<span (click)=\"openNav()\" class=\"clickToOpenNav\">&#9776; Available Quizzes</span>\r\n\r\n<div id=\"mySidenav\" class=\"sidenav\">\r\n    <a href=\"javascript:void(0)\" class=\"closebtn\" (click)=\"closeNav()\">&times;</a>\r\n    <h3>Available Quizzes</h3>\r\n    <ul *ngFor=\"let quiz of quizes\">\r\n        <li><a [routerLink]=\"\">{{ quiz.title }}</a></li>\r\n    </ul>\r\n</div>\r\n\r\n<div class=\"component\">\r\n    <app-socket-room></app-socket-room>\r\n</div>");
+/* harmony default export */ __webpack_exports__["default"] = ("<div id=\"mySidenav\" class=\"sidenav\">\r\n    <a href=\"javascript:void(0)\" class=\"closebtn\" (click)=\"closeNav()\">&times;</a>\r\n    <h3>Available Quizzes</h3>\r\n    <ul *ngFor=\"let quiz of quizes\">\r\n        <li><a [routerLink]=\"['available', quiz._id]\">{{ quiz.title }}</a></li>\r\n    </ul>\r\n</div>\r\n\r\n<div class=\"component\">\r\n    <span (click)=\"openNav()\">&#9776; Available Quizzes</span>\r\n    <br><br>\r\n    <router-outlet></router-outlet>\r\n</div>");
 
 /***/ }),
 
@@ -430,14 +430,15 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const routes = [
-    { path: 'quiz-list', component: _quiz_list_quiz_list_component__WEBPACK_IMPORTED_MODULE_11__["QuizListComponent"] },
+    { path: 'quiz-list', component: _quiz_list_quiz_list_component__WEBPACK_IMPORTED_MODULE_11__["QuizListComponent"], children: [
+            { path: 'available/:id', component: _available_quizzes_available_quizzes_component__WEBPACK_IMPORTED_MODULE_7__["AvailableQuizzesComponent"] },
+        ] },
     { path: 'login', component: _login_login_component__WEBPACK_IMPORTED_MODULE_1__["LoginComponent"] },
     { path: 'signup', component: _sign_up_sign_up_component__WEBPACK_IMPORTED_MODULE_2__["SignUpComponent"] },
     { path: 'dashboard', component: _dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_3__["DashboardComponent"] },
     { path: 'game-platform', component: _game_platform_game_platform_component__WEBPACK_IMPORTED_MODULE_4__["GamePlatformComponent"] },
     { path: 'create-quiz', component: _create_quiz_create_quiz_component__WEBPACK_IMPORTED_MODULE_5__["CreateQuizComponent"] },
     { path: 'homepage', component: _homepage_homepage_component__WEBPACK_IMPORTED_MODULE_6__["HomepageComponent"] },
-    { path: 'available', component: _available_quizzes_available_quizzes_component__WEBPACK_IMPORTED_MODULE_7__["AvailableQuizzesComponent"] },
     { path: 'edit/:id', component: _edit_quiz_edit_quiz_component__WEBPACK_IMPORTED_MODULE_8__["EditQuizComponent"] },
     { path: '', pathMatch: 'full', redirectTo: '/homepage' },
     { path: '*', pathMatch: 'full', redirectTo: '/' },
@@ -620,16 +621,27 @@ __webpack_require__.r(__webpack_exports__);
 
 
 let AvailableQuizzesComponent = class AvailableQuizzesComponent {
-    constructor(httpService, router) {
-        this.httpService = httpService;
-        this.router = router;
+    constructor(_httpService, _router, _activeRoute) {
+        this._httpService = _httpService;
+        this._router = _router;
+        this._activeRoute = _activeRoute;
     }
     ngOnInit() {
+        this._activeRoute.params
+            .subscribe((params) => {
+            console.log(params);
+            this._httpService.findQuiz(params.id)
+                .subscribe((data) => {
+                this.showQuiz = data.quiz;
+                console.log(this.showQuiz);
+            });
+        });
     }
 };
 AvailableQuizzesComponent.ctorParameters = () => [
     { type: _services_http_service__WEBPACK_IMPORTED_MODULE_2__["HttpService"] },
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"] }
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"] }
 ];
 AvailableQuizzesComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -1089,16 +1101,19 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "QuizListComponent", function() { return QuizListComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-/* harmony import */ var src_app_services_websocket_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/websocket.service */ "./src/app/services/websocket.service.ts");
-/* harmony import */ var _services_http_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../services/http.service */ "./src/app/services/http.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+/* harmony import */ var src_app_services_websocket_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! src/app/services/websocket.service */ "./src/app/services/websocket.service.ts");
+/* harmony import */ var _services_http_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../services/http.service */ "./src/app/services/http.service.ts");
+
 
 
 
 
 let QuizListComponent = class QuizListComponent {
-    constructor(webSocketService, httpService) {
+    constructor(webSocketService, httpService, _router) {
         this.webSocketService = webSocketService;
         this.httpService = httpService;
+        this._router = _router;
     }
     ngOnInit() {
         this.quizes = this.webSocketService.quizes;
@@ -1126,8 +1141,9 @@ let QuizListComponent = class QuizListComponent {
     }
 };
 QuizListComponent.ctorParameters = () => [
-    { type: src_app_services_websocket_service__WEBPACK_IMPORTED_MODULE_2__["WebsocketService"] },
-    { type: _services_http_service__WEBPACK_IMPORTED_MODULE_3__["HttpService"] }
+    { type: src_app_services_websocket_service__WEBPACK_IMPORTED_MODULE_3__["WebsocketService"] },
+    { type: _services_http_service__WEBPACK_IMPORTED_MODULE_4__["HttpService"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"] }
 ];
 QuizListComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
