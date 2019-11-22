@@ -33,12 +33,16 @@ export class HttpService {
   }
 
   findQuiz(id) {
-    
     return this._http.get('/api/quizzes/' + id)
   }
 
+<<<<<<< HEAD
   getQuestionsForQuiz(id: string) {
 
     return this._http.get('/api/quizes/' + id)
+=======
+  edit(id, editQuiz) {
+    return this._http.put('/api/quizzes/' + id, editQuiz);
+>>>>>>> 565db732aae07e028281ebc2c0ed9a0d00a8c921
   }
 }

@@ -1,0 +1,27 @@
+<div class="form">
+        <p *ngIf="errorMsg" style="color:red">
+            {{ errorMsg }}
+        </p>
+        <form (submit)="submitEdit()">
+            <h3>Edit this quiz~</h3>
+            <label for="title">Title:</label><br>
+            <input type="text" name="title" [(ngModel)]='editQuiz.title'><br>
+    
+            <div *ngFor="let editQuestion of editQuiz.questions; let i = index">
+                <label for="question">Question {{i+1}}:</label><br>
+                <input type="text" name="question{{i}}" placeholder="Enter your question here"
+                    [(ngModel)]='editQuiz.questions[i].question'><br>
+                <input type="text" name="option-{{i}}a" placeholder="Correct answer here"
+                    [(ngModel)]='editQuiz.questions[i].options[0]'><br>
+                <input type="text" name="option-{{i}}b" placeholder="Incorrect answer here"
+                    [(ngModel)]='editQuiz.questions[i].options[1]'><br>
+                <input type="text" name="option-{{i}}c" placeholder="Incorrect answer here"
+                    [(ngModel)]='editQuiz.questions[i].options[2]'><br>
+                <input type="text" name="option-{{i}}d" placeholder="Incorrect answer here"
+                    [(ngModel)]='editQuiz.questions[i].options[3]'><br>
+            </div>
+    
+            <button (click)="additionalQuestion()" type="button">Add a question</button>
+            <button type="submit">Update quiz</button>
+        </form>
+    </div>

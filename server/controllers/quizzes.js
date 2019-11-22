@@ -15,24 +15,38 @@ module.exports = {
     },
 
     allQuizzes(req, res) {
-        Quiz.find()
-          .then(quiz => {
-            res.json({ quizzes: quiz, msg: 'Quizzes' });
-          })
-          .catch(errors => {
-            console.log(errors);
-            res.json({ errors: errors });
-          })
-      },
+      Quiz.find()
+        .then(quiz => {
+          res.json({ quizzes: quiz, msg: 'Quizzes' });
+        })
+        .catch(errors => {
+          console.log(errors);
+          res.json({ errors: errors });
+        })
+    },
 
-      findQuiz(req, res) {
-        Quiz.findById(req.body)
-          .then(quiz => {
-            res.json({ quiz: quiz, msg: 'Quizzes' });
-          })
-          .catch(errors => {
-            console.log(errors);
-            res.json({ errors: errors });
-          })
-      },
+    findQuiz(req, res) {
+      // Quiz.findById(req.body)
+      Quiz.findById({ _id: req.params.id })
+        .then(quiz => {
+          res.json({ quiz: quiz, msg: 'Quizzes' });
+        })
+        .catch(errors => {
+          console.log(errors);
+          res.json({ errors: errors });
+        })
+    },
+
+    edit(req, res) {
+      Quiz.findByIdAndUpdate(
+          req.params.id, 
+          req.body,
+          {
+              new: true,
+              runValidators: true
+          }
+      )
+          .then(quiz => res.json(quiz))
+          .catch(errors => res.json({ errors: errors }))
+  },
 }
