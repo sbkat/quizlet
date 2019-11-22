@@ -3,17 +3,17 @@
       {{ errorMsg }}
     </p>
 </div>
-<div>
-    <form (submit)="login()">
-        <h1>Login</h1>
+<div class="container">
+    <form (submit)="login()" class="">
+        <h1 class="pb-4">Login</h1>
         <label for="email">Email:</label>
-        <input type="email" name="email" [(ngModel)]='loginUser.email'>
+        <input class="form-control col-xs-12 col-sm-6 col-md-4 col-lg-4" type="email" name="email" [(ngModel)]='loginUser.email' style="margin-left:35%">
         <br>
         <label for="password">Password:</label>
-        <input type="password" name="password" [(ngModel)]='loginUser.password'>
+        <input class="form-control col-xs-12 col-sm-6 col-md-4 col-lg-4" type="password" name="password" [(ngModel)]='loginUser.password' style="margin-left:35%">
         <br>
         <br>
-        <button type="submit">Let's go!</button>
+        <button class="btn-sm btn-light mb-4" type="submit">Let's go!</button>
     </form>
     <p>Don't have an account? <a [routerLink]="['/signup']">Sign up here</a></p>
 </div>
