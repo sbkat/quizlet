@@ -33,7 +33,10 @@ export class HttpService {
   }
 
   findQuiz(id) {
-    
     return this._http.get('/api/quizzes/' + id)
+  }
+
+  edit(id, editQuiz) {
+    return this._http.put('/api/quizzes/' + id, editQuiz);
   }
 }

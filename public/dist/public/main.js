@@ -84,7 +84,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<p>edit-quiz works!</p>\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"form\">\n        <p *ngIf=\"errorMsg\" style=\"color:red\">\n            {{ errorMsg }}\n        </p>\n        <form (submit)=\"submitEdit()\">\n            <h3>Edit this quiz~</h3>\n            <label for=\"title\">Title:</label><br>\n            <input type=\"text\" name=\"title\" [(ngModel)]='editQuiz.title'><br>\n    \n            <div *ngFor=\"let editQuestion of editQuiz.questions; let i = index\">\n                <label for=\"question\">Question {{i+1}}:</label><br>\n                <input type=\"text\" name=\"question{{i}}\" placeholder=\"Enter your question here\"\n                    [(ngModel)]='editQuiz.questions[i].question'><br>\n                <input type=\"text\" name=\"option-{{i}}a\" placeholder=\"Correct answer here\"\n                    [(ngModel)]='editQuiz.questions[i].options[0]'><br>\n                <input type=\"text\" name=\"option-{{i}}b\" placeholder=\"Incorrect answer here\"\n                    [(ngModel)]='editQuiz.questions[i].options[1]'><br>\n                <input type=\"text\" name=\"option-{{i}}c\" placeholder=\"Incorrect answer here\"\n                    [(ngModel)]='editQuiz.questions[i].options[2]'><br>\n                <input type=\"text\" name=\"option-{{i}}d\" placeholder=\"Incorrect answer here\"\n                    [(ngModel)]='editQuiz.questions[i].options[3]'><br>\n            </div>\n    \n            <button (click)=\"additionalQuestion()\" type=\"button\">Add a question</button>\n            <button type=\"submit\">Update quiz</button>\n        </form>\n    </div>");
 
 /***/ }),
 
@@ -845,13 +845,53 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EditQuizComponent", function() { return EditQuizComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _services_http_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../services/http.service */ "./src/app/services/http.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+
+
 
 
 let EditQuizComponent = class EditQuizComponent {
-    constructor() { }
+    constructor(_httpService, _router, _activeRoute) {
+        this._httpService = _httpService;
+        this._router = _router;
+        this._activeRoute = _activeRoute;
+        this.errorMsg = '';
+    }
     ngOnInit() {
+        this._activeRoute.params
+            .subscribe((params) => {
+            this._httpService.findQuiz(params.id)
+                .subscribe((data) => {
+                this.editQuiz = data.quiz;
+                console.log(this.editQuiz);
+            });
+        });
+    }
+    submitEdit() {
+        this._httpService.edit(this.editQuiz._id, this.editQuiz)
+            .subscribe((data) => {
+            if (data.hasOwnProperty('errors')) {
+                console.log(data.errors);
+                this.errorMsg = data.errors.message;
+            }
+            else {
+                this._router.navigate(['/quiz-list']);
+            }
+        });
+    }
+    additionalQuestion() {
+        this.editQuiz.questions.push({
+            question: '',
+            options: [],
+        });
     }
 };
+EditQuizComponent.ctorParameters = () => [
+    { type: _services_http_service__WEBPACK_IMPORTED_MODULE_2__["HttpService"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["ActivatedRoute"] }
+];
 EditQuizComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
         selector: 'app-edit-quiz',
@@ -1141,6 +1181,9 @@ let HttpService = class HttpService {
     }
     findQuiz(id) {
         return this._http.get('/api/quizzes/' + id);
+    }
+    edit(id, editQuiz) {
+        return this._http.put('/api/quizzes/' + id, editQuiz);
     }
 };
 HttpService.ctorParameters = () => [
