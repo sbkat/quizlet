@@ -31,7 +31,9 @@ const config: SocketIoConfig = { url: 'http://localhost:4200', options: {} };
     CreateQuizComponent,
     GamePlatformComponent,
     HomepageComponent,
-    AvailableQuizzesComponent
+    AvailableQuizzesComponent,
+    QuizListComponent,
+    SocketRoomComponent
   ],
   imports: [
     BrowserModule,
