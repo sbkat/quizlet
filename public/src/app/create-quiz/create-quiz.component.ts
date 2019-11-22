@@ -1,5 +1,10 @@
+<<<<<<< HEAD
 import { Component, OnInit } from '@angular/core';
 import { HttpService } from '../services/http.service';
+=======
+import { Component, OnInit, Input } from '@angular/core';
+import { HttpService } from '../http.service';
+>>>>>>> show-quiz
 import { Router } from '@angular/router';
 
 @Component({
@@ -17,6 +22,7 @@ export class CreateQuizComponent implements OnInit {
     }]
   };
   errorMsg: string[] = [];
+  @Input() allQuiz: any;
 
   constructor(
     private httpService: HttpService,
@@ -41,7 +47,18 @@ export class CreateQuizComponent implements OnInit {
       if (data.hasOwnProperty('errors')) {
         this.errorMsg = data.errors.message;
       } else {
+<<<<<<< HEAD
         this.router.navigate(['/quiz-list']);
+=======
+        this.allQuiz.push(this.newQuiz);
+        this.newQuiz = {
+          title: '',
+          questions: [{
+            question: '',
+            options: [],
+          }]
+        };
+>>>>>>> show-quiz
       }
     });
   }

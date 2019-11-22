@@ -4,6 +4,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { GamePlatformComponent } from './game-platform/game-platform.component';
 import { CreateQuizComponent } from './create-quiz/create-quiz.component';
 import { HomepageComponent } from './homepage/homepage.component';
+import { AvailableQuizzesComponent } from './available-quizzes/available-quizzes.component';
 
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
@@ -18,6 +19,7 @@ const routes: Routes = [
   { path: 'game-platform', component: GamePlatformComponent },
   { path: 'create-quiz', component: CreateQuizComponent },
   { path: 'homepage', component: HomepageComponent },
+  { path: 'available', component: AvailableQuizzesComponent },
   { path: '', pathMatch: 'full', redirectTo: '/homepage' },
   { path: '*', pathMatch: 'full', redirectTo: '/' },
 ];

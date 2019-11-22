@@ -12,6 +12,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { CreateQuizComponent } from './create-quiz/create-quiz.component';
 import { GamePlatformComponent } from './game-platform/game-platform.component';
 import { HomepageComponent } from './homepage/homepage.component';
+import { AvailableQuizzesComponent } from './available-quizzes/available-quizzes.component';
 
 // socket Module
 import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
@@ -30,8 +31,7 @@ const config: SocketIoConfig = { url: 'http://localhost:4200', options: {} };
     CreateQuizComponent,
     GamePlatformComponent,
     HomepageComponent,
-    QuizListComponent,
-    SocketRoomComponent
+    AvailableQuizzesComponent
   ],
   imports: [
     BrowserModule,
