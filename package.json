@@ -4,6 +4,7 @@
   "description": "Open source \"kahoot\" app clone. To get started, clone GitHub repo and..",
   "main": "server.js",
   "dependencies": {
+    "@types/socket.io": "^2.1.4",
     "bcryptjs": "^2.4.3",
     "express": "^4.17.1",
     "express-flash": "0.0.2",

@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpService } from './http.service';
+import { HttpService } from './services/http.service';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
@@ -13,6 +13,14 @@ import { CreateQuizComponent } from './create-quiz/create-quiz.component';
 import { GamePlatformComponent } from './game-platform/game-platform.component';
 import { HomepageComponent } from './homepage/homepage.component';
 
+// socket Module
+import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
+import { QuizListComponent } from './quiz-list/quiz-list.component';
+import { SocketRoomComponent } from './socket-room/socket-room.component';
+const config: SocketIoConfig = { url: 'http://localhost:4200', options: {} };
+
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,13 +29,17 @@ import { HomepageComponent } from './homepage/homepage.component';
     DashboardComponent,
     CreateQuizComponent,
     GamePlatformComponent,
-    HomepageComponent
+    HomepageComponent,
+    QuizListComponent,
+    SocketRoomComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    SocketIoModule.forRoot(config)
+
   ],
   providers: [HttpService],
   bootstrap: [AppComponent]

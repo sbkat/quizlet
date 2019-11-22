@@ -24,4 +24,15 @@ module.exports = {
             res.json({ errors: errors });
           })
       },
+
+      findQuiz(req, res) {
+        Quiz.findById(req.body)
+          .then(quiz => {
+            res.json({ quiz: quiz, msg: 'Quizzes' });
+          })
+          .catch(errors => {
+            console.log(errors);
+            res.json({ errors: errors });
+          })
+      },
 }

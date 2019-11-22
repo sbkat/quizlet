@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpService } from '../http.service';
+import { HttpService } from '../services/http.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -41,7 +41,7 @@ export class CreateQuizComponent implements OnInit {
       if (data.hasOwnProperty('errors')) {
         this.errorMsg = data.errors.message;
       } else {
-        this.router.navigate(['/game-platform']);
+        this.router.navigate(['/quiz-list']);
       }
     });
   }

@@ -7,9 +7,11 @@ import { HomepageComponent } from './homepage/homepage.component';
 
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { QuizListComponent } from './quiz-list/quiz-list.component';
 
 
 const routes: Routes = [
+  { path: 'quiz-list', component: QuizListComponent },
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignUpComponent },
   { path: 'dashboard', component: DashboardComponent },

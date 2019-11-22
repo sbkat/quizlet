@@ -11,4 +11,6 @@ module.exports = function (app) {
     //quiz routes
     app.post('/api/create-quiz', quizController.createQuiz); 
     app.get('/api/quizzes', quizController.allQuizzes);
+    app.get('/api/quizzes/:id', quizController.findQuiz);
+
 }

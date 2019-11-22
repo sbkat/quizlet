@@ -1,0 +1,9 @@
+
+<div class='sidenav'>
+    <span (click)='newQuiz()'>New Quiz</span>
+    <span (click)='hideBar()'>Hide</span>
+    <span [class.selected]='quizId === currentQuiz' (click)='loadQuiz(quizId)' *ngFor='let quizId of quizes | async'>{{ quizId }}</span>
+    <span>{{ quizes }}</span>
+    
+</div>
+<app-socket-room></app-socket-room>

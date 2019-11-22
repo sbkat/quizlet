@@ -32,7 +32,7 @@ webpackEmptyAsyncContext.id = "./$$_lazy_route_resource lazy recursive";
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<!DOCTYPE html>\r\n<html lang=\"en\">\r\n\r\n<head>\r\n  <meta charset=\"UTF-8\">\r\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\r\n  <meta http-equiv=\"X-UA-Compatible\" content=\"ie=edge\">\r\n  <title>Socket Trivia</title>\r\n</head>\r\n\r\n<body>\r\n  <div class=\"navbar\">\r\n      <button [routerLink]=\"['/homepage']\" class=\"l-button\">Home</button>\r\n      <button [routerLink]=\"['/game-platform']\" class=\"l-button\">Play now!</button>\r\n      <button [routerLink]=\"['/signup']\" class=\"r-button\">Sign up!</button>\r\n      <button [routerLink]=\"['/login']\" class=\"r-button\">Login</button>\r\n  </div>\r\n  <div class=\"router-outlet\">\r\n    <router-outlet></router-outlet>\r\n  </div>\r\n</body>\r\n\r\n</html>");
+/* harmony default export */ __webpack_exports__["default"] = ("<!DOCTYPE html>\n<html lang=\"en\">\n\n<head>\n  <meta charset=\"UTF-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n  <meta http-equiv=\"X-UA-Compatible\" content=\"ie=edge\">\n  <title>Socket Trivia</title>\n</head>\n\n<body>\n  <div class=\"navbar\">\n      <button [routerLink]=\"['/homepage']\" class=\"l-button\">Home</button>\n      <button [routerLink]=\"['/game-platform']\" class=\"l-button\">Play now!</button>\n      <button [routerLink]=\"['/signup']\" class=\"r-button\">Sign up!</button>\n      <button [routerLink]=\"['/login']\" class=\"r-button\">Login</button>\n  </div>\n  <div class=\"router-outlet\">\n    <!-- <app-quiz-list></app-quiz-list>\n    <app-quiz></app-quiz> -->\n    <router-outlet></router-outlet>\n  </div>\n</body>\n\n</html>");
 
 /***/ }),
 
@@ -45,7 +45,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"form\">\r\n    <p *ngIf=\"errorMsg\" style=\"color:red\">\r\n        {{ errorMsg }}\r\n    </p>\r\n    <form (submit)=\"createQuiz()\">\r\n        <h3>Create your own quiz~</h3>\r\n        <label for=\"title\">Title:</label><br>\r\n        <input type=\"text\" name=\"title\" [(ngModel)]='newQuiz.title'><br>\r\n\r\n        <div *ngFor=\"let newQuestion of newQuiz.questions; let i = index\">\r\n            <label for=\"question\">Question {{i+1}}:</label><br>\r\n            <input type=\"text\" name=\"question{{i}}\" placeholder=\"Enter your question here\"\r\n                [(ngModel)]='newQuiz.questions[i].question'><br>\r\n            <input type=\"text\" name=\"option-{{i}}a\" placeholder=\"Correct answer here\"\r\n                [(ngModel)]='newQuiz.questions[i].options[0]'><br>\r\n            <input type=\"text\" name=\"option-{{i}}b\" placeholder=\"Incorrect answer here\"\r\n                [(ngModel)]='newQuiz.questions[i].options[1]'><br>\r\n            <input type=\"text\" name=\"option-{{i}}c\" placeholder=\"Incorrect answer here\"\r\n                [(ngModel)]='newQuiz.questions[i].options[2]'><br>\r\n            <input type=\"text\" name=\"option-{{i}}d\" placeholder=\"Incorrect answer here\"\r\n                [(ngModel)]='newQuiz.questions[i].options[3]'><br>\r\n        </div>\r\n\r\n        <button (click)=\"additionalQuestion()\" type=\"button\">Add a question</button>\r\n        <button type=\"submit\">Create quiz</button>\r\n    </form>\r\n</div>");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"form\">\n    <p *ngIf=\"errorMsg\" style=\"color:red\">\n        {{ errorMsg }}\n    </p>\n    <form (submit)=\"createQuiz()\">\n        <h3>Create your own quiz~</h3>\n        <label for=\"title\">Title:</label><br>\n        <input type=\"text\" name=\"title\" [(ngModel)]='newQuiz.title'><br>\n\n        <div *ngFor=\"let newQuestion of newQuiz.questions; let i = index\">\n            <label for=\"question\">Question {{i+1}}:</label><br>\n            <input type=\"text\" name=\"question{{i}}\" placeholder=\"Enter your question here\"\n                [(ngModel)]='newQuiz.questions[i].question'><br>\n            <input type=\"text\" name=\"option-{{i}}a\" placeholder=\"Correct answer here\"\n                [(ngModel)]='newQuiz.questions[i].options[0]'><br>\n            <input type=\"text\" name=\"option-{{i}}b\" placeholder=\"Incorrect answer here\"\n                [(ngModel)]='newQuiz.questions[i].options[1]'><br>\n            <input type=\"text\" name=\"option-{{i}}c\" placeholder=\"Incorrect answer here\"\n                [(ngModel)]='newQuiz.questions[i].options[2]'><br>\n            <input type=\"text\" name=\"option-{{i}}d\" placeholder=\"Incorrect answer here\"\n                [(ngModel)]='newQuiz.questions[i].options[3]'><br>\n        </div>\n\n        <button (click)=\"additionalQuestion()\" type=\"button\">Add a question</button>\n        <button type=\"submit\">Create quiz</button>\n    </form>\n</div>");
 
 /***/ }),
 
@@ -58,7 +58,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<h1>Hello, {{ currentUser.username }}!</h1>\r\n\r\n<div class=\"component\">\r\n    <app-create-quiz></app-create-quiz>\r\n</div>");
+/* harmony default export */ __webpack_exports__["default"] = ("<h1>Hello, {{ currentUser.username }}!</h1>\n\n<div class=\"component\">\n    <app-create-quiz></app-create-quiz>\n</div>");
 
 /***/ }),
 
@@ -71,7 +71,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div>\r\n    <form (submit)=\"submitPlayer()\">\r\n        <h1>Enter your player info!</h1>\r\n        <label for=\"pin\">Game pin:</label>\r\n        <input type=\"pin\" name=\"pin\">\r\n        <br>\r\n        <label for=\"nickname\">Nickname:</label>\r\n        <input type=\"nickname\" name=\"nickname\">\r\n        <br>\r\n        <button type=\"submit\">Let's play!</button>\r\n    </form>\r\n</div>");
+/* harmony default export */ __webpack_exports__["default"] = ("<div>\n    <form (submit)=\"submitPlayer()\">\n        <h1>Enter your player info!</h1>\n        <label for=\"pin\">Game pin:</label>\n        <input type=\"pin\" name=\"pin\">\n        <br>\n        <label for=\"nickname\">Nickname:</label>\n        <input type=\"nickname\" name=\"nickname\">\n        <br>\n        <button type=\"submit\">Let's play!</button>\n    </form>\n</div>");
 
 /***/ }),
 
@@ -84,7 +84,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div>\r\n    <h1>Welcome to Socket Trivia,</h1>\r\n    <p>A fun and interactive learning platform to get your audience engaged.</p>\r\n</div>");
+/* harmony default export */ __webpack_exports__["default"] = ("<div>\n    <h1>Welcome to Socket Trivia,</h1>\n    <p>A fun and interactive learning platform to get your audience engaged.</p>\n</div>");
 
 /***/ }),
 
@@ -97,7 +97,20 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div>\r\n    <p *ngIf=\"errorMsg\" style=\"color:red\">\r\n      {{ errorMsg }}\r\n    </p>\r\n</div>\r\n<div>\r\n    <form (submit)=\"login()\">\r\n        <h1>Login</h1>\r\n        <label for=\"email\">Email:</label>\r\n        <input type=\"email\" name=\"email\" [(ngModel)]='loginUser.email'>\r\n        <br>\r\n        <label for=\"password\">Password:</label>\r\n        <input type=\"password\" name=\"password\" [(ngModel)]='loginUser.password'>\r\n        <br>\r\n        <br>\r\n        <button type=\"submit\">Let's go!</button>\r\n    </form>\r\n    <p>Don't have an account? <a [routerLink]=\"['/signup']\">Sign up here</a></p>\r\n</div>");
+/* harmony default export */ __webpack_exports__["default"] = ("<div>\n    <p *ngIf=\"errorMsg\" style=\"color:red\">\n      {{ errorMsg }}\n    </p>\n</div>\n<div>\n    <form (submit)=\"login()\">\n        <h1>Login</h1>\n        <label for=\"email\">Email:</label>\n        <input type=\"email\" name=\"email\" [(ngModel)]='loginUser.email'>\n        <br>\n        <label for=\"password\">Password:</label>\n        <input type=\"password\" name=\"password\" [(ngModel)]='loginUser.password'>\n        <br>\n        <br>\n        <button type=\"submit\">Let's go!</button>\n    </form>\n    <p>Don't have an account? <a [routerLink]=\"['/signup']\">Sign up here</a></p>\n</div>");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/quiz-list/quiz-list.component.html":
+/*!******************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/quiz-list/quiz-list.component.html ***!
+  \******************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\n<div class='sidenav'>\n    <span (click)='newQuiz()'>New Quiz</span>\n    <span (click)='hideBar()'>Hide</span>\n    <span [class.selected]='quizId === currentQuiz' (click)='loadQuiz(quizId)' *ngFor='let quizId of quizes | async'>{{ quizId }}</span>\n    <span>{{ quizes }}</span>\n    \n</div>\n<app-socket-room></app-socket-room>");
 
 /***/ }),
 
@@ -110,7 +123,20 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div>\r\n    <p *ngIf=\"errorMsg\" style=\"color:red\">\r\n      {{ errorMsg }}\r\n    </p>\r\n</div>\r\n<div>\r\n    <form (submit)=\"register()\">\r\n        <h1>Sign up!</h1>\r\n        <label for=\"username\">Username:</label>\r\n        <input type=\"text\" name=\"username\" [(ngModel)]='newUser.username'>\r\n        <br>\r\n        <label for=\"email\">Email:</label>\r\n        <input type=\"email\" name=\"email\" [(ngModel)]='newUser.email'>\r\n        <br>\r\n        <label for=\"password\">Password:</label>\r\n        <input type=\"password\" name=\"password\" [(ngModel)]='newUser.password'>\r\n        <br>\r\n        <button type=\"submit\">Submit</button>\r\n    </form>\r\n    <p>Already have an account? <a [routerLink]=\"['/login']\">Login here</a></p>\r\n</div>");
+/* harmony default export */ __webpack_exports__["default"] = ("<div>\n    <p *ngIf=\"errorMsg\" style=\"color:red\">\n      {{ errorMsg }}\n    </p>\n</div>\n<div>\n    <form (submit)=\"register()\">\n        <h1>Sign up!</h1>\n        <label for=\"username\">Username:</label>\n        <input type=\"text\" name=\"username\" [(ngModel)]='newUser.username'>\n        <br>\n        <label for=\"email\">Email:</label>\n        <input type=\"email\" name=\"email\" [(ngModel)]='newUser.email'>\n        <br>\n        <label for=\"password\">Password:</label>\n        <input type=\"password\" name=\"password\" [(ngModel)]='newUser.password'>\n        <br>\n        <button type=\"submit\">Submit</button>\n    </form>\n    <p>Already have an account? <a [routerLink]=\"['/login']\">Login here</a></p>\n</div>");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/socket-room/socket-room.component.html":
+/*!**********************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/socket-room/socket-room.component.html ***!
+  \**********************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<p>socket-room works!</p>\n<textarea [(ngModel)]='quiz.quiz' (keyup)='editQuiz()' placeholder='Whats your answer?'></textarea>\n\n");
 
 /***/ }),
 
@@ -362,6 +388,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _homepage_homepage_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./homepage/homepage.component */ "./src/app/homepage/homepage.component.ts");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+/* harmony import */ var _quiz_list_quiz_list_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./quiz-list/quiz-list.component */ "./src/app/quiz-list/quiz-list.component.ts");
+
 
 
 
@@ -372,6 +400,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const routes = [
+    { path: 'quiz-list', component: _quiz_list_quiz_list_component__WEBPACK_IMPORTED_MODULE_9__["QuizListComponent"] },
     { path: 'login', component: _login_login_component__WEBPACK_IMPORTED_MODULE_1__["LoginComponent"] },
     { path: 'signup', component: _sign_up_sign_up_component__WEBPACK_IMPORTED_MODULE_2__["SignUpComponent"] },
     { path: 'dashboard', component: _dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_3__["DashboardComponent"] },
@@ -403,7 +432,7 @@ AppRoutingModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("html, body {\n  background-color: #383535;\n  height: 100vh;\n  margin: 0;\n  text-align: center;\n}\n\n* {\n  font-family: \"Raleway\", sans-serif;\n  color: white;\n}\n\n* input {\n  color: black;\n  margin: 3px;\n  font-size: 14px;\n}\n\nbutton {\n  border: 1px solid white;\n  background-color: white;\n  color: #383535;\n  border-radius: 5px;\n  margin: 5px;\n}\n\np {\n  display: inline-block;\n  vertical-align: middle;\n}\n\n.button {\n  display: inline-block;\n  vertical-align: middle;\n}\n\n.l-button {\n  float: left;\n}\n\n.r-button {\n  float: right;\n}\n\nbody {\n  padding: 20px;\n}\n\n.navbar {\n  display: block;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvQzpcXFVzZXJzXFxLYXRoeVxcRGVza3RvcFxcY29sbGFiXFxzb2NrZXRfdHJpdmlhXFxwdWJsaWMvc3JjXFxzdHlsZXMuc2NzcyIsInNyYy9hcHAvYXBwLmNvbXBvbmVudC5zY3NzIiwic3JjL2FwcC9DOlxcVXNlcnNcXEthdGh5XFxEZXNrdG9wXFxjb2xsYWJcXHNvY2tldF90cml2aWFcXHB1YmxpYy9zcmNcXGFwcFxcYXBwLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQXlCQTtFQUNJLHlCQXRCWTtFQXVCWixhQUFBO0VBQ0EsU0FBQTtFQUNBLGtCQUFBO0FDeEJKOztBRDJCQTtFQUNJLGtDQWhDYTtFQWlDYixZQTVCYTtBQ0lqQjs7QUR5Qkk7RUFDSSxZQUFBO0VBQ0EsV0FBQTtFQUNBLGVBQUE7QUN2QlI7O0FEMkJBO0VBQ0ksdUJBQUE7RUFDQSx1QkF0Q2E7RUF1Q2IsY0F6Q1k7RUEwQ1osa0JBQUE7RUFDQSxXQUFBO0FDeEJKOztBQ2pCQTtFRlVJLHFCQUFBO0VBQ0Esc0JBQUE7QUNXSjs7QUNsQkE7RUZNSSxxQkFBQTtFQUNBLHNCQUFBO0FDZ0JKOztBQ25CQTtFQUNJLFdBQUE7QURzQko7O0FDbkJBO0VBQ0ksWUFBQTtBRHNCSjs7QUNuQkE7RUFDSSxhQUFBO0FEc0JKOztBQ25CQTtFQUNJLGNBQUE7QURzQkoiLCJmaWxlIjoic3JjL2FwcC9hcHAuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIkcHJpbWFyeS1mb250OiAnSnVsaXVzIFNhbnMgT25lJywgc2Fucy1zZXJpZjtcclxuJHNlY29uZGFyeS1mb250OiAnUmFsZXdheScsIHNhbnMtc2VyaWY7XHJcbiR0ZXJ0aWFyeS1mb250OiAnT3BlbiBTYW5zJywgc2Fucy1zZXJpZjtcclxuXHJcbiRwcmltYXJ5LWNvbG9yOiByZ2IoNTYsIDUzLCA1Myk7XHJcbiRzZWNvbmRhcnktY29sb3I6IHJnYigxNjEsIDE1OSwgMTU5KTtcclxuJHRlcnRpYXJ5LWNvbG9yOiByZ2IoMjU1LCAyNTUsIDI1NSk7XHJcblxyXG5AbWl4aW4gZmxleENlbnRlciB7XHJcbiAgICBoZWlnaHQ6IDEwMHZoO1xyXG4gICAgZGlzcGxheTogZmxleDtcclxuICAgIGp1c3RpZnktY29udGVudDogY2VudGVyO1xyXG4gICAgYWxpZ24taXRlbXM6IGNlbnRlcjtcclxufVxyXG5cclxuQG1peGluIGlubGluZSB7XHJcbiAgICBkaXNwbGF5OiBpbmxpbmUtYmxvY2s7XHJcbiAgICB2ZXJ0aWNhbC1hbGlnbjogbWlkZGxlO1xyXG59XHJcblxyXG5AbWl4aW4gYmxvY2sge1xyXG4gICAgZGlzcGxheTogYmxvY2s7XHJcbiAgICB2ZXJ0aWNhbC1hbGlnbjogdG9wO1xyXG59XHJcblxyXG5odG1sLCBib2R5IHtcclxuICAgIGJhY2tncm91bmQtY29sb3I6ICRwcmltYXJ5LWNvbG9yO1xyXG4gICAgaGVpZ2h0OiAxMDB2aDtcclxuICAgIG1hcmdpbjogMDtcclxuICAgIHRleHQtYWxpZ246Y2VudGVyO1xyXG59XHJcblxyXG4qIHtcclxuICAgIGZvbnQtZmFtaWx5OiAkc2Vjb25kYXJ5LWZvbnQ7XHJcbiAgICBjb2xvcjogJHRlcnRpYXJ5LWNvbG9yO1xyXG4gICAgaW5wdXQge1xyXG4gICAgICAgIGNvbG9yOiBibGFjaztcclxuICAgICAgICBtYXJnaW46IDNweDtcclxuICAgICAgICBmb250LXNpemU6MTRweDtcclxuICAgIH1cclxufVxyXG5cclxuYnV0dG9uIHtcclxuICAgIGJvcmRlcjogMXB4IHNvbGlkICR0ZXJ0aWFyeS1jb2xvcjtcclxuICAgIGJhY2tncm91bmQtY29sb3I6ICR0ZXJ0aWFyeS1jb2xvcjtcclxuICAgIGNvbG9yOiAkcHJpbWFyeS1jb2xvcjtcclxuICAgIGJvcmRlci1yYWRpdXM6IDVweDtcclxuICAgIG1hcmdpbjogNXB4O1xyXG59IiwiaHRtbCwgYm9keSB7XG4gIGJhY2tncm91bmQtY29sb3I6ICMzODM1MzU7XG4gIGhlaWdodDogMTAwdmg7XG4gIG1hcmdpbjogMDtcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xufVxuXG4qIHtcbiAgZm9udC1mYW1pbHk6IFwiUmFsZXdheVwiLCBzYW5zLXNlcmlmO1xuICBjb2xvcjogd2hpdGU7XG59XG4qIGlucHV0IHtcbiAgY29sb3I6IGJsYWNrO1xuICBtYXJnaW46IDNweDtcbiAgZm9udC1zaXplOiAxNHB4O1xufVxuXG5idXR0b24ge1xuICBib3JkZXI6IDFweCBzb2xpZCB3aGl0ZTtcbiAgYmFja2dyb3VuZC1jb2xvcjogd2hpdGU7XG4gIGNvbG9yOiAjMzgzNTM1O1xuICBib3JkZXItcmFkaXVzOiA1cHg7XG4gIG1hcmdpbjogNXB4O1xufVxuXG5wIHtcbiAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xuICB2ZXJ0aWNhbC1hbGlnbjogbWlkZGxlO1xufVxuXG4uYnV0dG9uIHtcbiAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xuICB2ZXJ0aWNhbC1hbGlnbjogbWlkZGxlO1xufVxuXG4ubC1idXR0b24ge1xuICBmbG9hdDogbGVmdDtcbn1cblxuLnItYnV0dG9uIHtcbiAgZmxvYXQ6IHJpZ2h0O1xufVxuXG5ib2R5IHtcbiAgcGFkZGluZzogMjBweDtcbn1cblxuLm5hdmJhciB7XG4gIGRpc3BsYXk6IGJsb2NrO1xufSIsIkBpbXBvcnQgJy4uL3N0eWxlcy5zY3NzJztcclxuXHJcbi8vIC5yb3V0ZXItb3V0bGV0IHtcclxuLy8gICAgIEBpbmNsdWRlIGZsZXhDZW50ZXIoKTtcclxuLy8gfVxyXG5cclxucCB7XHJcbiAgICBAaW5jbHVkZSBpbmxpbmUoKTtcclxufVxyXG5cclxuLmJ1dHRvbiB7XHJcbiAgICBAaW5jbHVkZSBpbmxpbmUoKTtcclxufVxyXG5cclxuLmwtYnV0dG9uIHtcclxuICAgIGZsb2F0OiBsZWZ0O1xyXG59XHJcblxyXG4uci1idXR0b24ge1xyXG4gICAgZmxvYXQ6IHJpZ2h0O1xyXG59XHJcblxyXG5ib2R5IHtcclxuICAgIHBhZGRpbmc6IDIwcHg7XHJcbn1cclxuXHJcbi5uYXZiYXIge1xyXG4gICAgZGlzcGxheTogYmxvY2s7XHJcbn0iXX0= */");
+/* harmony default export */ __webpack_exports__["default"] = ("html, body {\n  background-color: #383535;\n  height: 100vh;\n  margin: 0;\n  text-align: center;\n}\n\n* {\n  font-family: \"Raleway\", sans-serif;\n  color: white;\n}\n\n* input {\n  color: black;\n  margin: 3px;\n  font-size: 14px;\n}\n\nbutton {\n  border: 1px solid white;\n  background-color: white;\n  color: #383535;\n  border-radius: 5px;\n  margin: 5px;\n}\n\np {\n  display: inline-block;\n  vertical-align: middle;\n}\n\n.button {\n  display: inline-block;\n  vertical-align: middle;\n}\n\n.l-button {\n  float: left;\n}\n\n.r-button {\n  float: right;\n}\n\nbody {\n  padding: 20px;\n}\n\n.navbar {\n  display: block;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9mcmFuY2lzY296YW1vcmEvRG9jdW1lbnRzL0Rvam8yMDE5L01FQU4vcXVpelByb2ovc29ja2V0X3RyaXZpYS9wdWJsaWMvc3JjL3N0eWxlcy5zY3NzIiwic3JjL2FwcC9hcHAuY29tcG9uZW50LnNjc3MiLCIvVXNlcnMvZnJhbmNpc2NvemFtb3JhL0RvY3VtZW50cy9Eb2pvMjAxOS9NRUFOL3F1aXpQcm9qL3NvY2tldF90cml2aWEvcHVibGljL3NyYy9hcHAvYXBwLmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQXlCQTtFQUNJLHlCQXRCWTtFQXVCWixhQUFBO0VBQ0EsU0FBQTtFQUNBLGtCQUFBO0FDeEJKOztBRDJCQTtFQUNJLGtDQWhDYTtFQWlDYixZQTVCYTtBQ0lqQjs7QUR5Qkk7RUFDSSxZQUFBO0VBQ0EsV0FBQTtFQUNBLGVBQUE7QUN2QlI7O0FEMkJBO0VBQ0ksdUJBQUE7RUFDQSx1QkF0Q2E7RUF1Q2IsY0F6Q1k7RUEwQ1osa0JBQUE7RUFDQSxXQUFBO0FDeEJKOztBQ2pCQTtFRlVJLHFCQUFBO0VBQ0Esc0JBQUE7QUNXSjs7QUNsQkE7RUZNSSxxQkFBQTtFQUNBLHNCQUFBO0FDZ0JKOztBQ25CQTtFQUNJLFdBQUE7QURzQko7O0FDbkJBO0VBQ0ksWUFBQTtBRHNCSjs7QUNuQkE7RUFDSSxhQUFBO0FEc0JKOztBQ25CQTtFQUNJLGNBQUE7QURzQkoiLCJmaWxlIjoic3JjL2FwcC9hcHAuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIkcHJpbWFyeS1mb250OiAnSnVsaXVzIFNhbnMgT25lJywgc2Fucy1zZXJpZjtcbiRzZWNvbmRhcnktZm9udDogJ1JhbGV3YXknLCBzYW5zLXNlcmlmO1xuJHRlcnRpYXJ5LWZvbnQ6ICdPcGVuIFNhbnMnLCBzYW5zLXNlcmlmO1xuXG4kcHJpbWFyeS1jb2xvcjogcmdiKDU2LCA1MywgNTMpO1xuJHNlY29uZGFyeS1jb2xvcjogcmdiKDE2MSwgMTU5LCAxNTkpO1xuJHRlcnRpYXJ5LWNvbG9yOiByZ2IoMjU1LCAyNTUsIDI1NSk7XG5cbkBtaXhpbiBmbGV4Q2VudGVyIHtcbiAgICBoZWlnaHQ6IDEwMHZoO1xuICAgIGRpc3BsYXk6IGZsZXg7XG4gICAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XG4gICAgYWxpZ24taXRlbXM6IGNlbnRlcjtcbn1cblxuQG1peGluIGlubGluZSB7XG4gICAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xuICAgIHZlcnRpY2FsLWFsaWduOiBtaWRkbGU7XG59XG5cbkBtaXhpbiBibG9jayB7XG4gICAgZGlzcGxheTogYmxvY2s7XG4gICAgdmVydGljYWwtYWxpZ246IHRvcDtcbn1cblxuaHRtbCwgYm9keSB7XG4gICAgYmFja2dyb3VuZC1jb2xvcjogJHByaW1hcnktY29sb3I7XG4gICAgaGVpZ2h0OiAxMDB2aDtcbiAgICBtYXJnaW46IDA7XG4gICAgdGV4dC1hbGlnbjpjZW50ZXI7XG59XG5cbioge1xuICAgIGZvbnQtZmFtaWx5OiAkc2Vjb25kYXJ5LWZvbnQ7XG4gICAgY29sb3I6ICR0ZXJ0aWFyeS1jb2xvcjtcbiAgICBpbnB1dCB7XG4gICAgICAgIGNvbG9yOiBibGFjaztcbiAgICAgICAgbWFyZ2luOiAzcHg7XG4gICAgICAgIGZvbnQtc2l6ZToxNHB4O1xuICAgIH1cbn1cblxuYnV0dG9uIHtcbiAgICBib3JkZXI6IDFweCBzb2xpZCAkdGVydGlhcnktY29sb3I7XG4gICAgYmFja2dyb3VuZC1jb2xvcjogJHRlcnRpYXJ5LWNvbG9yO1xuICAgIGNvbG9yOiAkcHJpbWFyeS1jb2xvcjtcbiAgICBib3JkZXItcmFkaXVzOiA1cHg7XG4gICAgbWFyZ2luOiA1cHg7XG59IiwiaHRtbCwgYm9keSB7XG4gIGJhY2tncm91bmQtY29sb3I6ICMzODM1MzU7XG4gIGhlaWdodDogMTAwdmg7XG4gIG1hcmdpbjogMDtcbiAgdGV4dC1hbGlnbjogY2VudGVyO1xufVxuXG4qIHtcbiAgZm9udC1mYW1pbHk6IFwiUmFsZXdheVwiLCBzYW5zLXNlcmlmO1xuICBjb2xvcjogd2hpdGU7XG59XG4qIGlucHV0IHtcbiAgY29sb3I6IGJsYWNrO1xuICBtYXJnaW46IDNweDtcbiAgZm9udC1zaXplOiAxNHB4O1xufVxuXG5idXR0b24ge1xuICBib3JkZXI6IDFweCBzb2xpZCB3aGl0ZTtcbiAgYmFja2dyb3VuZC1jb2xvcjogd2hpdGU7XG4gIGNvbG9yOiAjMzgzNTM1O1xuICBib3JkZXItcmFkaXVzOiA1cHg7XG4gIG1hcmdpbjogNXB4O1xufVxuXG5wIHtcbiAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xuICB2ZXJ0aWNhbC1hbGlnbjogbWlkZGxlO1xufVxuXG4uYnV0dG9uIHtcbiAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xuICB2ZXJ0aWNhbC1hbGlnbjogbWlkZGxlO1xufVxuXG4ubC1idXR0b24ge1xuICBmbG9hdDogbGVmdDtcbn1cblxuLnItYnV0dG9uIHtcbiAgZmxvYXQ6IHJpZ2h0O1xufVxuXG5ib2R5IHtcbiAgcGFkZGluZzogMjBweDtcbn1cblxuLm5hdmJhciB7XG4gIGRpc3BsYXk6IGJsb2NrO1xufSIsIkBpbXBvcnQgJy4uL3N0eWxlcy5zY3NzJztcblxuLy8gLnJvdXRlci1vdXRsZXQge1xuLy8gICAgIEBpbmNsdWRlIGZsZXhDZW50ZXIoKTtcbi8vIH1cblxucCB7XG4gICAgQGluY2x1ZGUgaW5saW5lKCk7XG59XG5cbi5idXR0b24ge1xuICAgIEBpbmNsdWRlIGlubGluZSgpO1xufVxuXG4ubC1idXR0b24ge1xuICAgIGZsb2F0OiBsZWZ0O1xufVxuXG4uci1idXR0b24ge1xuICAgIGZsb2F0OiByaWdodDtcbn1cblxuYm9keSB7XG4gICAgcGFkZGluZzogMjBweDtcbn1cblxuLm5hdmJhciB7XG4gICAgZGlzcGxheTogYmxvY2s7XG59Il19 */");
 
 /***/ }),
 
@@ -451,7 +480,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/platform-browser */ "./node_modules/@angular/platform-browser/fesm2015/platform-browser.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-/* harmony import */ var _http_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./http.service */ "./src/app/http.service.ts");
+/* harmony import */ var _services_http_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./services/http.service */ "./src/app/services/http.service.ts");
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/common/http */ "./node_modules/@angular/common/fesm2015/http.js");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/fesm2015/forms.js");
 /* harmony import */ var _app_routing_module__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./app-routing.module */ "./src/app/app-routing.module.ts");
@@ -462,6 +491,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _create_quiz_create_quiz_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./create-quiz/create-quiz.component */ "./src/app/create-quiz/create-quiz.component.ts");
 /* harmony import */ var _game_platform_game_platform_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./game-platform/game-platform.component */ "./src/app/game-platform/game-platform.component.ts");
 /* harmony import */ var _homepage_homepage_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./homepage/homepage.component */ "./src/app/homepage/homepage.component.ts");
+/* harmony import */ var ngx_socket_io__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ngx-socket-io */ "./node_modules/ngx-socket-io/fesm2015/ngx-socket-io.js");
+/* harmony import */ var _quiz_list_quiz_list_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./quiz-list/quiz-list.component */ "./src/app/quiz-list/quiz-list.component.ts");
+/* harmony import */ var _socket_room_socket_room_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./socket-room/socket-room.component */ "./src/app/socket-room/socket-room.component.ts");
 
 
 
@@ -476,13 +508,18 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+// socket Module
+
+
+
+const config = { url: 'http://localhost:4200', options: {} };
 let AppModule = class AppModule {
     constructor(_httpService) {
         this._httpService = _httpService;
     }
 };
 AppModule.ctorParameters = () => [
-    { type: _http_service__WEBPACK_IMPORTED_MODULE_3__["HttpService"] }
+    { type: _services_http_service__WEBPACK_IMPORTED_MODULE_3__["HttpService"] }
 ];
 AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
     Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["NgModule"])({
@@ -493,15 +530,18 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
             _dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_10__["DashboardComponent"],
             _create_quiz_create_quiz_component__WEBPACK_IMPORTED_MODULE_11__["CreateQuizComponent"],
             _game_platform_game_platform_component__WEBPACK_IMPORTED_MODULE_12__["GamePlatformComponent"],
-            _homepage_homepage_component__WEBPACK_IMPORTED_MODULE_13__["HomepageComponent"]
+            _homepage_homepage_component__WEBPACK_IMPORTED_MODULE_13__["HomepageComponent"],
+            _quiz_list_quiz_list_component__WEBPACK_IMPORTED_MODULE_15__["QuizListComponent"],
+            _socket_room_socket_room_component__WEBPACK_IMPORTED_MODULE_16__["SocketRoomComponent"]
         ],
         imports: [
             _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
             _app_routing_module__WEBPACK_IMPORTED_MODULE_6__["AppRoutingModule"],
             _angular_common_http__WEBPACK_IMPORTED_MODULE_4__["HttpClientModule"],
             _angular_forms__WEBPACK_IMPORTED_MODULE_5__["FormsModule"],
+            ngx_socket_io__WEBPACK_IMPORTED_MODULE_14__["SocketIoModule"].forRoot(config)
         ],
-        providers: [_http_service__WEBPACK_IMPORTED_MODULE_3__["HttpService"]],
+        providers: [_services_http_service__WEBPACK_IMPORTED_MODULE_3__["HttpService"]],
         bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_7__["AppComponent"]]
     })
 ], AppModule);
@@ -519,7 +559,7 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("html, body {\n  background-color: #383535;\n  height: 100vh;\n  margin: 0;\n  text-align: center;\n}\n\n* {\n  font-family: \"Raleway\", sans-serif;\n  color: white;\n}\n\n* input {\n  color: black;\n  margin: 3px;\n  font-size: 14px;\n}\n\nbutton {\n  border: 1px solid white;\n  background-color: white;\n  color: #383535;\n  border-radius: 5px;\n  margin: 5px;\n}\n\n.form {\n  border: 1px solid #a19f9f;\n  padding: 20px;\n}\n\ninput {\n  width: 90%;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvY3JlYXRlLXF1aXovQzpcXFVzZXJzXFxLYXRoeVxcRGVza3RvcFxcY29sbGFiXFxzb2NrZXRfdHJpdmlhXFxwdWJsaWMvc3JjXFxzdHlsZXMuc2NzcyIsInNyYy9hcHAvY3JlYXRlLXF1aXovY3JlYXRlLXF1aXouY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL2NyZWF0ZS1xdWl6L0M6XFxVc2Vyc1xcS2F0aHlcXERlc2t0b3BcXGNvbGxhYlxcc29ja2V0X3RyaXZpYVxccHVibGljL3NyY1xcYXBwXFxjcmVhdGUtcXVpelxcY3JlYXRlLXF1aXouY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBeUJBO0VBQ0kseUJBdEJZO0VBdUJaLGFBQUE7RUFDQSxTQUFBO0VBQ0Esa0JBQUE7QUN4Qko7O0FEMkJBO0VBQ0ksa0NBaENhO0VBaUNiLFlBNUJhO0FDSWpCOztBRHlCSTtFQUNJLFlBQUE7RUFDQSxXQUFBO0VBQ0EsZUFBQTtBQ3ZCUjs7QUQyQkE7RUFDSSx1QkFBQTtFQUNBLHVCQXRDYTtFQXVDYixjQXpDWTtFQTBDWixrQkFBQTtFQUNBLFdBQUE7QUN4Qko7O0FDckJBO0VBQ0kseUJBQUE7RUFDQSxhQUFBO0FEd0JKOztBQ3JCQTtFQUNJLFVBQUE7QUR3QkoiLCJmaWxlIjoic3JjL2FwcC9jcmVhdGUtcXVpei9jcmVhdGUtcXVpei5jb21wb25lbnQuc2NzcyIsInNvdXJjZXNDb250ZW50IjpbIiRwcmltYXJ5LWZvbnQ6ICdKdWxpdXMgU2FucyBPbmUnLCBzYW5zLXNlcmlmO1xyXG4kc2Vjb25kYXJ5LWZvbnQ6ICdSYWxld2F5Jywgc2Fucy1zZXJpZjtcclxuJHRlcnRpYXJ5LWZvbnQ6ICdPcGVuIFNhbnMnLCBzYW5zLXNlcmlmO1xyXG5cclxuJHByaW1hcnktY29sb3I6IHJnYig1NiwgNTMsIDUzKTtcclxuJHNlY29uZGFyeS1jb2xvcjogcmdiKDE2MSwgMTU5LCAxNTkpO1xyXG4kdGVydGlhcnktY29sb3I6IHJnYigyNTUsIDI1NSwgMjU1KTtcclxuXHJcbkBtaXhpbiBmbGV4Q2VudGVyIHtcclxuICAgIGhlaWdodDogMTAwdmg7XHJcbiAgICBkaXNwbGF5OiBmbGV4O1xyXG4gICAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XHJcbiAgICBhbGlnbi1pdGVtczogY2VudGVyO1xyXG59XHJcblxyXG5AbWl4aW4gaW5saW5lIHtcclxuICAgIGRpc3BsYXk6IGlubGluZS1ibG9jaztcclxuICAgIHZlcnRpY2FsLWFsaWduOiBtaWRkbGU7XHJcbn1cclxuXHJcbkBtaXhpbiBibG9jayB7XHJcbiAgICBkaXNwbGF5OiBibG9jaztcclxuICAgIHZlcnRpY2FsLWFsaWduOiB0b3A7XHJcbn1cclxuXHJcbmh0bWwsIGJvZHkge1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogJHByaW1hcnktY29sb3I7XHJcbiAgICBoZWlnaHQ6IDEwMHZoO1xyXG4gICAgbWFyZ2luOiAwO1xyXG4gICAgdGV4dC1hbGlnbjpjZW50ZXI7XHJcbn1cclxuXHJcbioge1xyXG4gICAgZm9udC1mYW1pbHk6ICRzZWNvbmRhcnktZm9udDtcclxuICAgIGNvbG9yOiAkdGVydGlhcnktY29sb3I7XHJcbiAgICBpbnB1dCB7XHJcbiAgICAgICAgY29sb3I6IGJsYWNrO1xyXG4gICAgICAgIG1hcmdpbjogM3B4O1xyXG4gICAgICAgIGZvbnQtc2l6ZToxNHB4O1xyXG4gICAgfVxyXG59XHJcblxyXG5idXR0b24ge1xyXG4gICAgYm9yZGVyOiAxcHggc29saWQgJHRlcnRpYXJ5LWNvbG9yO1xyXG4gICAgYmFja2dyb3VuZC1jb2xvcjogJHRlcnRpYXJ5LWNvbG9yO1xyXG4gICAgY29sb3I6ICRwcmltYXJ5LWNvbG9yO1xyXG4gICAgYm9yZGVyLXJhZGl1czogNXB4O1xyXG4gICAgbWFyZ2luOiA1cHg7XHJcbn0iLCJodG1sLCBib2R5IHtcbiAgYmFja2dyb3VuZC1jb2xvcjogIzM4MzUzNTtcbiAgaGVpZ2h0OiAxMDB2aDtcbiAgbWFyZ2luOiAwO1xuICB0ZXh0LWFsaWduOiBjZW50ZXI7XG59XG5cbioge1xuICBmb250LWZhbWlseTogXCJSYWxld2F5XCIsIHNhbnMtc2VyaWY7XG4gIGNvbG9yOiB3aGl0ZTtcbn1cbiogaW5wdXQge1xuICBjb2xvcjogYmxhY2s7XG4gIG1hcmdpbjogM3B4O1xuICBmb250LXNpemU6IDE0cHg7XG59XG5cbmJ1dHRvbiB7XG4gIGJvcmRlcjogMXB4IHNvbGlkIHdoaXRlO1xuICBiYWNrZ3JvdW5kLWNvbG9yOiB3aGl0ZTtcbiAgY29sb3I6ICMzODM1MzU7XG4gIGJvcmRlci1yYWRpdXM6IDVweDtcbiAgbWFyZ2luOiA1cHg7XG59XG5cbi5mb3JtIHtcbiAgYm9yZGVyOiAxcHggc29saWQgI2ExOWY5ZjtcbiAgcGFkZGluZzogMjBweDtcbn1cblxuaW5wdXQge1xuICB3aWR0aDogOTAlO1xufSIsIkBpbXBvcnQgJy4uLy4uL3N0eWxlcy5zY3NzJztcclxuXHJcbi5mb3JtIHtcclxuICAgIGJvcmRlcjogMXB4IHNvbGlkICRzZWNvbmRhcnktY29sb3I7XHJcbiAgICBwYWRkaW5nOiAyMHB4O1xyXG59XHJcblxyXG5pbnB1dCB7XHJcbiAgICB3aWR0aDogOTAlO1xyXG59Il19 */");
+/* harmony default export */ __webpack_exports__["default"] = ("html, body {\n  background-color: #383535;\n  height: 100vh;\n  margin: 0;\n  text-align: center;\n}\n\n* {\n  font-family: \"Raleway\", sans-serif;\n  color: white;\n}\n\n* input {\n  color: black;\n  margin: 3px;\n  font-size: 14px;\n}\n\nbutton {\n  border: 1px solid white;\n  background-color: white;\n  color: #383535;\n  border-radius: 5px;\n  margin: 5px;\n}\n\n.form {\n  border: 1px solid #a19f9f;\n  padding: 20px;\n}\n\ninput {\n  width: 90%;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9mcmFuY2lzY296YW1vcmEvRG9jdW1lbnRzL0Rvam8yMDE5L01FQU4vcXVpelByb2ovc29ja2V0X3RyaXZpYS9wdWJsaWMvc3JjL3N0eWxlcy5zY3NzIiwic3JjL2FwcC9jcmVhdGUtcXVpei9jcmVhdGUtcXVpei5jb21wb25lbnQuc2NzcyIsIi9Vc2Vycy9mcmFuY2lzY296YW1vcmEvRG9jdW1lbnRzL0Rvam8yMDE5L01FQU4vcXVpelByb2ovc29ja2V0X3RyaXZpYS9wdWJsaWMvc3JjL2FwcC9jcmVhdGUtcXVpei9jcmVhdGUtcXVpei5jb21wb25lbnQuc2NzcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUF5QkE7RUFDSSx5QkF0Qlk7RUF1QlosYUFBQTtFQUNBLFNBQUE7RUFDQSxrQkFBQTtBQ3hCSjs7QUQyQkE7RUFDSSxrQ0FoQ2E7RUFpQ2IsWUE1QmE7QUNJakI7O0FEeUJJO0VBQ0ksWUFBQTtFQUNBLFdBQUE7RUFDQSxlQUFBO0FDdkJSOztBRDJCQTtFQUNJLHVCQUFBO0VBQ0EsdUJBdENhO0VBdUNiLGNBekNZO0VBMENaLGtCQUFBO0VBQ0EsV0FBQTtBQ3hCSjs7QUNyQkE7RUFDSSx5QkFBQTtFQUNBLGFBQUE7QUR3Qko7O0FDckJBO0VBQ0ksVUFBQTtBRHdCSiIsImZpbGUiOiJzcmMvYXBwL2NyZWF0ZS1xdWl6L2NyZWF0ZS1xdWl6LmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiJHByaW1hcnktZm9udDogJ0p1bGl1cyBTYW5zIE9uZScsIHNhbnMtc2VyaWY7XG4kc2Vjb25kYXJ5LWZvbnQ6ICdSYWxld2F5Jywgc2Fucy1zZXJpZjtcbiR0ZXJ0aWFyeS1mb250OiAnT3BlbiBTYW5zJywgc2Fucy1zZXJpZjtcblxuJHByaW1hcnktY29sb3I6IHJnYig1NiwgNTMsIDUzKTtcbiRzZWNvbmRhcnktY29sb3I6IHJnYigxNjEsIDE1OSwgMTU5KTtcbiR0ZXJ0aWFyeS1jb2xvcjogcmdiKDI1NSwgMjU1LCAyNTUpO1xuXG5AbWl4aW4gZmxleENlbnRlciB7XG4gICAgaGVpZ2h0OiAxMDB2aDtcbiAgICBkaXNwbGF5OiBmbGV4O1xuICAgIGp1c3RpZnktY29udGVudDogY2VudGVyO1xuICAgIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG59XG5cbkBtaXhpbiBpbmxpbmUge1xuICAgIGRpc3BsYXk6IGlubGluZS1ibG9jaztcbiAgICB2ZXJ0aWNhbC1hbGlnbjogbWlkZGxlO1xufVxuXG5AbWl4aW4gYmxvY2sge1xuICAgIGRpc3BsYXk6IGJsb2NrO1xuICAgIHZlcnRpY2FsLWFsaWduOiB0b3A7XG59XG5cbmh0bWwsIGJvZHkge1xuICAgIGJhY2tncm91bmQtY29sb3I6ICRwcmltYXJ5LWNvbG9yO1xuICAgIGhlaWdodDogMTAwdmg7XG4gICAgbWFyZ2luOiAwO1xuICAgIHRleHQtYWxpZ246Y2VudGVyO1xufVxuXG4qIHtcbiAgICBmb250LWZhbWlseTogJHNlY29uZGFyeS1mb250O1xuICAgIGNvbG9yOiAkdGVydGlhcnktY29sb3I7XG4gICAgaW5wdXQge1xuICAgICAgICBjb2xvcjogYmxhY2s7XG4gICAgICAgIG1hcmdpbjogM3B4O1xuICAgICAgICBmb250LXNpemU6MTRweDtcbiAgICB9XG59XG5cbmJ1dHRvbiB7XG4gICAgYm9yZGVyOiAxcHggc29saWQgJHRlcnRpYXJ5LWNvbG9yO1xuICAgIGJhY2tncm91bmQtY29sb3I6ICR0ZXJ0aWFyeS1jb2xvcjtcbiAgICBjb2xvcjogJHByaW1hcnktY29sb3I7XG4gICAgYm9yZGVyLXJhZGl1czogNXB4O1xuICAgIG1hcmdpbjogNXB4O1xufSIsImh0bWwsIGJvZHkge1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjMzgzNTM1O1xuICBoZWlnaHQ6IDEwMHZoO1xuICBtYXJnaW46IDA7XG4gIHRleHQtYWxpZ246IGNlbnRlcjtcbn1cblxuKiB7XG4gIGZvbnQtZmFtaWx5OiBcIlJhbGV3YXlcIiwgc2Fucy1zZXJpZjtcbiAgY29sb3I6IHdoaXRlO1xufVxuKiBpbnB1dCB7XG4gIGNvbG9yOiBibGFjaztcbiAgbWFyZ2luOiAzcHg7XG4gIGZvbnQtc2l6ZTogMTRweDtcbn1cblxuYnV0dG9uIHtcbiAgYm9yZGVyOiAxcHggc29saWQgd2hpdGU7XG4gIGJhY2tncm91bmQtY29sb3I6IHdoaXRlO1xuICBjb2xvcjogIzM4MzUzNTtcbiAgYm9yZGVyLXJhZGl1czogNXB4O1xuICBtYXJnaW46IDVweDtcbn1cblxuLmZvcm0ge1xuICBib3JkZXI6IDFweCBzb2xpZCAjYTE5ZjlmO1xuICBwYWRkaW5nOiAyMHB4O1xufVxuXG5pbnB1dCB7XG4gIHdpZHRoOiA5MCU7XG59IiwiQGltcG9ydCAnLi4vLi4vc3R5bGVzLnNjc3MnO1xuXG4uZm9ybSB7XG4gICAgYm9yZGVyOiAxcHggc29saWQgJHNlY29uZGFyeS1jb2xvcjtcbiAgICBwYWRkaW5nOiAyMHB4O1xufVxuXG5pbnB1dCB7XG4gICAgd2lkdGg6IDkwJTtcbn0iXX0= */");
 
 /***/ }),
 
@@ -535,7 +575,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "CreateQuizComponent", function() { return CreateQuizComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-/* harmony import */ var _http_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../http.service */ "./src/app/http.service.ts");
+/* harmony import */ var _services_http_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../services/http.service */ "./src/app/services/http.service.ts");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
 
 
@@ -565,7 +605,7 @@ let CreateQuizComponent = class CreateQuizComponent {
                 this.errorMsg = data.errors.message;
             }
             else {
-                this.router.navigate(['/game-platform']);
+                this.router.navigate(['/quiz-list']);
             }
         });
     }
@@ -577,7 +617,7 @@ let CreateQuizComponent = class CreateQuizComponent {
     }
 };
 CreateQuizComponent.ctorParameters = () => [
-    { type: _http_service__WEBPACK_IMPORTED_MODULE_2__["HttpService"] },
+    { type: _services_http_service__WEBPACK_IMPORTED_MODULE_2__["HttpService"] },
     { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"] }
 ];
 CreateQuizComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
@@ -601,7 +641,7 @@ CreateQuizComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("html, body {\n  background-color: #383535;\n  height: 100vh;\n  margin: 0;\n  text-align: center;\n}\n\n* {\n  font-family: \"Raleway\", sans-serif;\n  color: white;\n}\n\n* input {\n  color: black;\n  margin: 3px;\n  font-size: 14px;\n}\n\nbutton {\n  border: 1px solid white;\n  background-color: white;\n  color: #383535;\n  border-radius: 5px;\n  margin: 5px;\n}\n\n.component {\n  justify-content: center;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvZGFzaGJvYXJkL0M6XFxVc2Vyc1xcS2F0aHlcXERlc2t0b3BcXGNvbGxhYlxcc29ja2V0X3RyaXZpYVxccHVibGljL3NyY1xcc3R5bGVzLnNjc3MiLCJzcmMvYXBwL2Rhc2hib2FyZC9kYXNoYm9hcmQuY29tcG9uZW50LnNjc3MiLCJzcmMvYXBwL2Rhc2hib2FyZC9DOlxcVXNlcnNcXEthdGh5XFxEZXNrdG9wXFxjb2xsYWJcXHNvY2tldF90cml2aWFcXHB1YmxpYy9zcmNcXGFwcFxcZGFzaGJvYXJkXFxkYXNoYm9hcmQuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBeUJBO0VBQ0kseUJBdEJZO0VBdUJaLGFBQUE7RUFDQSxTQUFBO0VBQ0Esa0JBQUE7QUN4Qko7O0FEMkJBO0VBQ0ksa0NBaENhO0VBaUNiLFlBNUJhO0FDSWpCOztBRHlCSTtFQUNJLFlBQUE7RUFDQSxXQUFBO0VBQ0EsZUFBQTtBQ3ZCUjs7QUQyQkE7RUFDSSx1QkFBQTtFQUNBLHVCQXRDYTtFQXVDYixjQXpDWTtFQTBDWixrQkFBQTtFQUNBLFdBQUE7QUN4Qko7O0FDckJBO0VBQ0ksdUJBQUE7QUR3QkoiLCJmaWxlIjoic3JjL2FwcC9kYXNoYm9hcmQvZGFzaGJvYXJkLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiJHByaW1hcnktZm9udDogJ0p1bGl1cyBTYW5zIE9uZScsIHNhbnMtc2VyaWY7XHJcbiRzZWNvbmRhcnktZm9udDogJ1JhbGV3YXknLCBzYW5zLXNlcmlmO1xyXG4kdGVydGlhcnktZm9udDogJ09wZW4gU2FucycsIHNhbnMtc2VyaWY7XHJcblxyXG4kcHJpbWFyeS1jb2xvcjogcmdiKDU2LCA1MywgNTMpO1xyXG4kc2Vjb25kYXJ5LWNvbG9yOiByZ2IoMTYxLCAxNTksIDE1OSk7XHJcbiR0ZXJ0aWFyeS1jb2xvcjogcmdiKDI1NSwgMjU1LCAyNTUpO1xyXG5cclxuQG1peGluIGZsZXhDZW50ZXIge1xyXG4gICAgaGVpZ2h0OiAxMDB2aDtcclxuICAgIGRpc3BsYXk6IGZsZXg7XHJcbiAgICBqdXN0aWZ5LWNvbnRlbnQ6IGNlbnRlcjtcclxuICAgIGFsaWduLWl0ZW1zOiBjZW50ZXI7XHJcbn1cclxuXHJcbkBtaXhpbiBpbmxpbmUge1xyXG4gICAgZGlzcGxheTogaW5saW5lLWJsb2NrO1xyXG4gICAgdmVydGljYWwtYWxpZ246IG1pZGRsZTtcclxufVxyXG5cclxuQG1peGluIGJsb2NrIHtcclxuICAgIGRpc3BsYXk6IGJsb2NrO1xyXG4gICAgdmVydGljYWwtYWxpZ246IHRvcDtcclxufVxyXG5cclxuaHRtbCwgYm9keSB7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAkcHJpbWFyeS1jb2xvcjtcclxuICAgIGhlaWdodDogMTAwdmg7XHJcbiAgICBtYXJnaW46IDA7XHJcbiAgICB0ZXh0LWFsaWduOmNlbnRlcjtcclxufVxyXG5cclxuKiB7XHJcbiAgICBmb250LWZhbWlseTogJHNlY29uZGFyeS1mb250O1xyXG4gICAgY29sb3I6ICR0ZXJ0aWFyeS1jb2xvcjtcclxuICAgIGlucHV0IHtcclxuICAgICAgICBjb2xvcjogYmxhY2s7XHJcbiAgICAgICAgbWFyZ2luOiAzcHg7XHJcbiAgICAgICAgZm9udC1zaXplOjE0cHg7XHJcbiAgICB9XHJcbn1cclxuXHJcbmJ1dHRvbiB7XHJcbiAgICBib3JkZXI6IDFweCBzb2xpZCAkdGVydGlhcnktY29sb3I7XHJcbiAgICBiYWNrZ3JvdW5kLWNvbG9yOiAkdGVydGlhcnktY29sb3I7XHJcbiAgICBjb2xvcjogJHByaW1hcnktY29sb3I7XHJcbiAgICBib3JkZXItcmFkaXVzOiA1cHg7XHJcbiAgICBtYXJnaW46IDVweDtcclxufSIsImh0bWwsIGJvZHkge1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjMzgzNTM1O1xuICBoZWlnaHQ6IDEwMHZoO1xuICBtYXJnaW46IDA7XG4gIHRleHQtYWxpZ246IGNlbnRlcjtcbn1cblxuKiB7XG4gIGZvbnQtZmFtaWx5OiBcIlJhbGV3YXlcIiwgc2Fucy1zZXJpZjtcbiAgY29sb3I6IHdoaXRlO1xufVxuKiBpbnB1dCB7XG4gIGNvbG9yOiBibGFjaztcbiAgbWFyZ2luOiAzcHg7XG4gIGZvbnQtc2l6ZTogMTRweDtcbn1cblxuYnV0dG9uIHtcbiAgYm9yZGVyOiAxcHggc29saWQgd2hpdGU7XG4gIGJhY2tncm91bmQtY29sb3I6IHdoaXRlO1xuICBjb2xvcjogIzM4MzUzNTtcbiAgYm9yZGVyLXJhZGl1czogNXB4O1xuICBtYXJnaW46IDVweDtcbn1cblxuLmNvbXBvbmVudCB7XG4gIGp1c3RpZnktY29udGVudDogY2VudGVyO1xufSIsIkBpbXBvcnQgJy4uLy4uL3N0eWxlcy5zY3NzJztcclxuXHJcbi5jb21wb25lbnQge1xyXG4gICAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XHJcbn0iXX0= */");
+/* harmony default export */ __webpack_exports__["default"] = ("html, body {\n  background-color: #383535;\n  height: 100vh;\n  margin: 0;\n  text-align: center;\n}\n\n* {\n  font-family: \"Raleway\", sans-serif;\n  color: white;\n}\n\n* input {\n  color: black;\n  margin: 3px;\n  font-size: 14px;\n}\n\nbutton {\n  border: 1px solid white;\n  background-color: white;\n  color: #383535;\n  border-radius: 5px;\n  margin: 5px;\n}\n\n.component {\n  justify-content: center;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9mcmFuY2lzY296YW1vcmEvRG9jdW1lbnRzL0Rvam8yMDE5L01FQU4vcXVpelByb2ovc29ja2V0X3RyaXZpYS9wdWJsaWMvc3JjL3N0eWxlcy5zY3NzIiwic3JjL2FwcC9kYXNoYm9hcmQvZGFzaGJvYXJkLmNvbXBvbmVudC5zY3NzIiwiL1VzZXJzL2ZyYW5jaXNjb3phbW9yYS9Eb2N1bWVudHMvRG9qbzIwMTkvTUVBTi9xdWl6UHJvai9zb2NrZXRfdHJpdmlhL3B1YmxpYy9zcmMvYXBwL2Rhc2hib2FyZC9kYXNoYm9hcmQuY29tcG9uZW50LnNjc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBeUJBO0VBQ0kseUJBdEJZO0VBdUJaLGFBQUE7RUFDQSxTQUFBO0VBQ0Esa0JBQUE7QUN4Qko7O0FEMkJBO0VBQ0ksa0NBaENhO0VBaUNiLFlBNUJhO0FDSWpCOztBRHlCSTtFQUNJLFlBQUE7RUFDQSxXQUFBO0VBQ0EsZUFBQTtBQ3ZCUjs7QUQyQkE7RUFDSSx1QkFBQTtFQUNBLHVCQXRDYTtFQXVDYixjQXpDWTtFQTBDWixrQkFBQTtFQUNBLFdBQUE7QUN4Qko7O0FDckJBO0VBQ0ksdUJBQUE7QUR3QkoiLCJmaWxlIjoic3JjL2FwcC9kYXNoYm9hcmQvZGFzaGJvYXJkLmNvbXBvbmVudC5zY3NzIiwic291cmNlc0NvbnRlbnQiOlsiJHByaW1hcnktZm9udDogJ0p1bGl1cyBTYW5zIE9uZScsIHNhbnMtc2VyaWY7XG4kc2Vjb25kYXJ5LWZvbnQ6ICdSYWxld2F5Jywgc2Fucy1zZXJpZjtcbiR0ZXJ0aWFyeS1mb250OiAnT3BlbiBTYW5zJywgc2Fucy1zZXJpZjtcblxuJHByaW1hcnktY29sb3I6IHJnYig1NiwgNTMsIDUzKTtcbiRzZWNvbmRhcnktY29sb3I6IHJnYigxNjEsIDE1OSwgMTU5KTtcbiR0ZXJ0aWFyeS1jb2xvcjogcmdiKDI1NSwgMjU1LCAyNTUpO1xuXG5AbWl4aW4gZmxleENlbnRlciB7XG4gICAgaGVpZ2h0OiAxMDB2aDtcbiAgICBkaXNwbGF5OiBmbGV4O1xuICAgIGp1c3RpZnktY29udGVudDogY2VudGVyO1xuICAgIGFsaWduLWl0ZW1zOiBjZW50ZXI7XG59XG5cbkBtaXhpbiBpbmxpbmUge1xuICAgIGRpc3BsYXk6IGlubGluZS1ibG9jaztcbiAgICB2ZXJ0aWNhbC1hbGlnbjogbWlkZGxlO1xufVxuXG5AbWl4aW4gYmxvY2sge1xuICAgIGRpc3BsYXk6IGJsb2NrO1xuICAgIHZlcnRpY2FsLWFsaWduOiB0b3A7XG59XG5cbmh0bWwsIGJvZHkge1xuICAgIGJhY2tncm91bmQtY29sb3I6ICRwcmltYXJ5LWNvbG9yO1xuICAgIGhlaWdodDogMTAwdmg7XG4gICAgbWFyZ2luOiAwO1xuICAgIHRleHQtYWxpZ246Y2VudGVyO1xufVxuXG4qIHtcbiAgICBmb250LWZhbWlseTogJHNlY29uZGFyeS1mb250O1xuICAgIGNvbG9yOiAkdGVydGlhcnktY29sb3I7XG4gICAgaW5wdXQge1xuICAgICAgICBjb2xvcjogYmxhY2s7XG4gICAgICAgIG1hcmdpbjogM3B4O1xuICAgICAgICBmb250LXNpemU6MTRweDtcbiAgICB9XG59XG5cbmJ1dHRvbiB7XG4gICAgYm9yZGVyOiAxcHggc29saWQgJHRlcnRpYXJ5LWNvbG9yO1xuICAgIGJhY2tncm91bmQtY29sb3I6ICR0ZXJ0aWFyeS1jb2xvcjtcbiAgICBjb2xvcjogJHByaW1hcnktY29sb3I7XG4gICAgYm9yZGVyLXJhZGl1czogNXB4O1xuICAgIG1hcmdpbjogNXB4O1xufSIsImh0bWwsIGJvZHkge1xuICBiYWNrZ3JvdW5kLWNvbG9yOiAjMzgzNTM1O1xuICBoZWlnaHQ6IDEwMHZoO1xuICBtYXJnaW46IDA7XG4gIHRleHQtYWxpZ246IGNlbnRlcjtcbn1cblxuKiB7XG4gIGZvbnQtZmFtaWx5OiBcIlJhbGV3YXlcIiwgc2Fucy1zZXJpZjtcbiAgY29sb3I6IHdoaXRlO1xufVxuKiBpbnB1dCB7XG4gIGNvbG9yOiBibGFjaztcbiAgbWFyZ2luOiAzcHg7XG4gIGZvbnQtc2l6ZTogMTRweDtcbn1cblxuYnV0dG9uIHtcbiAgYm9yZGVyOiAxcHggc29saWQgd2hpdGU7XG4gIGJhY2tncm91bmQtY29sb3I6IHdoaXRlO1xuICBjb2xvcjogIzM4MzUzNTtcbiAgYm9yZGVyLXJhZGl1czogNXB4O1xuICBtYXJnaW46IDVweDtcbn1cblxuLmNvbXBvbmVudCB7XG4gIGp1c3RpZnktY29udGVudDogY2VudGVyO1xufSIsIkBpbXBvcnQgJy4uLy4uL3N0eWxlcy5zY3NzJztcblxuLmNvbXBvbmVudCB7XG4gICAganVzdGlmeS1jb250ZW50OiBjZW50ZXI7XG59Il19 */");
 
 /***/ }),
 
@@ -617,7 +657,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DashboardComponent", function() { return DashboardComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-/* harmony import */ var _http_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../http.service */ "./src/app/http.service.ts");
+/* harmony import */ var _services_http_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../services/http.service */ "./src/app/services/http.service.ts");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
 
 
@@ -644,7 +684,7 @@ let DashboardComponent = class DashboardComponent {
     }
 };
 DashboardComponent.ctorParameters = () => [
-    { type: _http_service__WEBPACK_IMPORTED_MODULE_2__["HttpService"] },
+    { type: _services_http_service__WEBPACK_IMPORTED_MODULE_2__["HttpService"] },
     { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"] }
 ];
 DashboardComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
@@ -747,10 +787,155 @@ HomepageComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 /***/ }),
 
-/***/ "./src/app/http.service.ts":
-/*!*********************************!*\
-  !*** ./src/app/http.service.ts ***!
-  \*********************************/
+/***/ "./src/app/login/login.component.scss":
+/*!********************************************!*\
+  !*** ./src/app/login/login.component.scss ***!
+  \********************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2xvZ2luL2xvZ2luLmNvbXBvbmVudC5zY3NzIn0= */");
+
+/***/ }),
+
+/***/ "./src/app/login/login.component.ts":
+/*!******************************************!*\
+  !*** ./src/app/login/login.component.ts ***!
+  \******************************************/
+/*! exports provided: LoginComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LoginComponent", function() { return LoginComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _services_http_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../services/http.service */ "./src/app/services/http.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+
+
+
+
+let LoginComponent = class LoginComponent {
+    constructor(httpService, router) {
+        this.httpService = httpService;
+        this.router = router;
+        this.errorMsg = [];
+    }
+    ngOnInit() {
+        this.loginUser = {
+            email: '',
+            password: '',
+        };
+    }
+    login() {
+        const obs = this.httpService.login(this.loginUser);
+        obs.subscribe((data) => {
+            console.log('data:', data);
+            if (data.errorMessage) {
+                this.errorMsg = data.errorMessage;
+            }
+            else {
+                this.router.navigate(['/dashboard']);
+            }
+        });
+    }
+};
+LoginComponent.ctorParameters = () => [
+    { type: _services_http_service__WEBPACK_IMPORTED_MODULE_2__["HttpService"] },
+    { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"] }
+];
+LoginComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-login',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./login.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/login/login.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./login.component.scss */ "./src/app/login/login.component.scss")).default]
+    })
+], LoginComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/quiz-list/quiz-list.component.scss":
+/*!****************************************************!*\
+  !*** ./src/app/quiz-list/quiz-list.component.scss ***!
+  \****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (".sidenav {\n  position: fixed;\n  height: 100%;\n  width: 220px;\n  top: 0;\n  left: 0;\n  background-color: #111111;\n  overflow-x: hidden;\n  padding-top: 20px;\n}\n.sidenav span {\n  padding: 6px 8px 6px 16px;\n  text-decoration: none;\n  font-size: 25px;\n  font-family: \"Roboto\", Tahoma, Geneva, Verdana, sans-serif;\n  color: #818181;\n  display: block;\n}\n.sidenav .selected {\n  color: #e1e1e1;\n}\n.sidenav :hover {\n  color: #f1f1f1;\n  cursor: pointer;\n}\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy9mcmFuY2lzY296YW1vcmEvRG9jdW1lbnRzL0Rvam8yMDE5L01FQU4vcXVpelByb2ovc29ja2V0X3RyaXZpYS9wdWJsaWMvc3JjL2FwcC9xdWl6LWxpc3QvcXVpei1saXN0LmNvbXBvbmVudC5zY3NzIiwic3JjL2FwcC9xdWl6LWxpc3QvcXVpei1saXN0LmNvbXBvbmVudC5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0ksZUFBQTtFQUNBLFlBQUE7RUFDQSxZQUFBO0VBQ0EsTUFBQTtFQUNBLE9BQUE7RUFDQSx5QkFBQTtFQUNBLGtCQUFBO0VBQ0EsaUJBQUE7QUNDSjtBREFNO0VBQ0UseUJBQUE7RUFDQSxxQkFBQTtFQUNBLGVBQUE7RUFDQSwwREFBQTtFQUNBLGNBQUE7RUFDQSxjQUFBO0FDRVI7QURETztFQUNDLGNBQUE7QUNHUjtBREZPO0VBQ0MsY0FBQTtFQUNBLGVBQUE7QUNJUiIsImZpbGUiOiJzcmMvYXBwL3F1aXotbGlzdC9xdWl6LWxpc3QuY29tcG9uZW50LnNjc3MiLCJzb3VyY2VzQ29udGVudCI6WyIuc2lkZW5hdiB7XG4gICAgcG9zaXRpb246IGZpeGVkO1xuICAgIGhlaWdodDogMTAwJTtcbiAgICB3aWR0aDogMjIwcHg7XG4gICAgdG9wOiAwO1xuICAgIGxlZnQ6IDA7XG4gICAgYmFja2dyb3VuZC1jb2xvcjogIzExMTExMTtcbiAgICBvdmVyZmxvdy14OiBoaWRkZW47XG4gICAgcGFkZGluZy10b3A6IDIwcHg7ICBcbiAgICAgIHNwYW4ge1xuICAgICAgICBwYWRkaW5nOiA2cHggIDhweCAgNnB4ICAxNnB4O1xuICAgICAgICB0ZXh0LWRlY29yYXRpb246IG5vbmU7XG4gICAgICAgIGZvbnQtc2l6ZTogMjVweDtcbiAgICAgICAgZm9udC1mYW1pbHk6ICdSb2JvdG8nLCBUYWhvbWEsIEdlbmV2YSwgVmVyZGFuYSwgc2Fucy1zZXJpZjtcbiAgICAgICAgY29sb3I6ICM4MTgxODE7XG4gICAgICAgIGRpc3BsYXk6IGJsb2NrO1xuICAgICAgfS5zZWxlY3RlZCB7XG4gICAgICAgIGNvbG9yOiAjZTFlMWUxO1xuICAgICAgfTpob3ZlciB7XG4gICAgICAgIGNvbG9yOiAjZjFmMWYxO1xuICAgICAgICBjdXJzb3I6IHBvaW50ZXI7XG4gICAgICB9XG4gIH0iLCIuc2lkZW5hdiB7XG4gIHBvc2l0aW9uOiBmaXhlZDtcbiAgaGVpZ2h0OiAxMDAlO1xuICB3aWR0aDogMjIwcHg7XG4gIHRvcDogMDtcbiAgbGVmdDogMDtcbiAgYmFja2dyb3VuZC1jb2xvcjogIzExMTExMTtcbiAgb3ZlcmZsb3cteDogaGlkZGVuO1xuICBwYWRkaW5nLXRvcDogMjBweDtcbn1cbi5zaWRlbmF2IHNwYW4ge1xuICBwYWRkaW5nOiA2cHggOHB4IDZweCAxNnB4O1xuICB0ZXh0LWRlY29yYXRpb246IG5vbmU7XG4gIGZvbnQtc2l6ZTogMjVweDtcbiAgZm9udC1mYW1pbHk6IFwiUm9ib3RvXCIsIFRhaG9tYSwgR2VuZXZhLCBWZXJkYW5hLCBzYW5zLXNlcmlmO1xuICBjb2xvcjogIzgxODE4MTtcbiAgZGlzcGxheTogYmxvY2s7XG59XG4uc2lkZW5hdiAuc2VsZWN0ZWQge1xuICBjb2xvcjogI2UxZTFlMTtcbn1cbi5zaWRlbmF2IDpob3ZlciB7XG4gIGNvbG9yOiAjZjFmMWYxO1xuICBjdXJzb3I6IHBvaW50ZXI7XG59Il19 */");
+
+/***/ }),
+
+/***/ "./src/app/quiz-list/quiz-list.component.ts":
+/*!**************************************************!*\
+  !*** ./src/app/quiz-list/quiz-list.component.ts ***!
+  \**************************************************/
+/*! exports provided: QuizListComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "QuizListComponent", function() { return QuizListComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var src_app_services_websocket_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! src/app/services/websocket.service */ "./src/app/services/websocket.service.ts");
+/* harmony import */ var _services_http_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../services/http.service */ "./src/app/services/http.service.ts");
+
+
+
+
+let QuizListComponent = class QuizListComponent {
+    constructor(webSocketService, httpService) {
+        this.webSocketService = webSocketService;
+        this.httpService = httpService;
+    }
+    ngOnInit() {
+        this.quizes = this.webSocketService.quizes;
+        this._quizSub = this.webSocketService.currentQuiz.subscribe(quiz => this.currentQuiz = quiz.id);
+        this.allQuizes();
+    }
+    ngOnDestroy() {
+        this._quizSub.unsubscribe();
+    }
+    loadQuiz(id) {
+        this.webSocketService.getQuiz(id);
+    }
+    allQuizes() {
+        this.httpService.allQuizzes()
+            .subscribe((data) => {
+            this.quizes = data.allQuizes;
+            console.log(this.allQuizes);
+        });
+    }
+    hideBar() {
+    }
+};
+QuizListComponent.ctorParameters = () => [
+    { type: src_app_services_websocket_service__WEBPACK_IMPORTED_MODULE_2__["WebsocketService"] },
+    { type: _services_http_service__WEBPACK_IMPORTED_MODULE_3__["HttpService"] }
+];
+QuizListComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-document-list',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./quiz-list.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/quiz-list/quiz-list.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./quiz-list.component.scss */ "./src/app/quiz-list/quiz-list.component.scss")).default]
+    })
+], QuizListComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/services/http.service.ts":
+/*!******************************************!*\
+  !*** ./src/app/services/http.service.ts ***!
+  \******************************************/
 /*! exports provided: HttpService */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -785,6 +970,9 @@ let HttpService = class HttpService {
     allQuizzes() {
         return this._http.get('/api/quizzes');
     }
+    findQuiz(id) {
+        return this._http.get('/api/quizzes/' + id);
+    }
 };
 HttpService.ctorParameters = () => [
     { type: _angular_common_http__WEBPACK_IMPORTED_MODULE_2__["HttpClient"] }
@@ -799,73 +987,50 @@ HttpService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
 
 /***/ }),
 
-/***/ "./src/app/login/login.component.scss":
-/*!********************************************!*\
-  !*** ./src/app/login/login.component.scss ***!
-  \********************************************/
-/*! exports provided: default */
+/***/ "./src/app/services/websocket.service.ts":
+/*!***********************************************!*\
+  !*** ./src/app/services/websocket.service.ts ***!
+  \***********************************************/
+/*! exports provided: WebsocketService */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2xvZ2luL2xvZ2luLmNvbXBvbmVudC5zY3NzIn0= */");
-
-/***/ }),
-
-/***/ "./src/app/login/login.component.ts":
-/*!******************************************!*\
-  !*** ./src/app/login/login.component.ts ***!
-  \******************************************/
-/*! exports provided: LoginComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LoginComponent", function() { return LoginComponent; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "WebsocketService", function() { return WebsocketService; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-/* harmony import */ var _http_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../http.service */ "./src/app/http.service.ts");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+/* harmony import */ var ngx_socket_io__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ngx-socket-io */ "./node_modules/ngx-socket-io/fesm2015/ngx-socket-io.js");
+/* harmony import */ var _http_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./http.service */ "./src/app/services/http.service.ts");
 
 
 
 
-let LoginComponent = class LoginComponent {
-    constructor(httpService, router) {
+let WebsocketService = class WebsocketService {
+    constructor(socket, httpService) {
+        this.socket = socket;
         this.httpService = httpService;
-        this.router = router;
-        this.errorMsg = [];
+        this.currentQuiz = this.socket.fromEvent('quiz');
+        this.quizes = this.socket.fromEvent('quizes');
     }
-    ngOnInit() {
-        this.loginUser = {
-            email: '',
-            password: '',
-        };
+    getQuiz(id) {
+        this.socket.emit('getQuiz', id);
     }
-    login() {
-        const obs = this.httpService.login(this.loginUser);
-        obs.subscribe((data) => {
-            console.log('data:', data);
-            if (data.errorMessage) {
-                this.errorMsg = data.errorMessage;
-            }
-            else {
-                this.router.navigate(['/dashboard']);
-            }
-        });
+    newQuiz(quiz) {
+        this.socket.emit('addQuiz', { id: this.quizId(quiz) });
+    }
+    quizId(quiz) {
+        let text = this.httpService.findQuiz(quiz._id);
     }
 };
-LoginComponent.ctorParameters = () => [
-    { type: _http_service__WEBPACK_IMPORTED_MODULE_2__["HttpService"] },
-    { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"] }
+WebsocketService.ctorParameters = () => [
+    { type: ngx_socket_io__WEBPACK_IMPORTED_MODULE_2__["Socket"] },
+    { type: _http_service__WEBPACK_IMPORTED_MODULE_3__["HttpService"] }
 ];
-LoginComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-        selector: 'app-login',
-        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./login.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/login/login.component.html")).default,
-        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./login.component.scss */ "./src/app/login/login.component.scss")).default]
+WebsocketService = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])({
+        providedIn: 'root'
     })
-], LoginComponent);
+], WebsocketService);
 
 
 
@@ -896,7 +1061,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SignUpComponent", function() { return SignUpComponent; });
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-/* harmony import */ var _http_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../http.service */ "./src/app/http.service.ts");
+/* harmony import */ var _services_http_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../services/http.service */ "./src/app/services/http.service.ts");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
 
 
@@ -929,7 +1094,7 @@ let SignUpComponent = class SignUpComponent {
     }
 };
 SignUpComponent.ctorParameters = () => [
-    { type: _http_service__WEBPACK_IMPORTED_MODULE_2__["HttpService"] },
+    { type: _services_http_service__WEBPACK_IMPORTED_MODULE_2__["HttpService"] },
     { type: _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"] }
 ];
 SignUpComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
@@ -939,6 +1104,50 @@ SignUpComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./sign-up.component.scss */ "./src/app/sign-up/sign-up.component.scss")).default]
     })
 ], SignUpComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/socket-room/socket-room.component.scss":
+/*!********************************************************!*\
+  !*** ./src/app/socket-room/socket-room.component.scss ***!
+  \********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL3NvY2tldC1yb29tL3NvY2tldC1yb29tLmNvbXBvbmVudC5zY3NzIn0= */");
+
+/***/ }),
+
+/***/ "./src/app/socket-room/socket-room.component.ts":
+/*!******************************************************!*\
+  !*** ./src/app/socket-room/socket-room.component.ts ***!
+  \******************************************************/
+/*! exports provided: SocketRoomComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SocketRoomComponent", function() { return SocketRoomComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+
+
+let SocketRoomComponent = class SocketRoomComponent {
+    constructor() { }
+    ngOnInit() {
+    }
+};
+SocketRoomComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-socket-room',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./socket-room.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/socket-room/socket-room.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./socket-room.component.scss */ "./src/app/socket-room/socket-room.component.scss")).default]
+    })
+], SocketRoomComponent);
 
 
 
@@ -1009,8 +1218,19 @@ Object(_angular_platform_browser_dynamic__WEBPACK_IMPORTED_MODULE_2__["platformB
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = __webpack_require__(/*! C:\Users\Kathy\Desktop\collab\socket_trivia\public\src\main.ts */"./src/main.ts");
+module.exports = __webpack_require__(/*! /Users/franciscozamora/Documents/Dojo2019/MEAN/quizProj/socket_trivia/public/src/main.ts */"./src/main.ts");
 
+
+/***/ }),
+
+/***/ 1:
+/*!********************!*\
+  !*** ws (ignored) ***!
+  \********************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/* (ignored) */
 
 /***/ })
 
