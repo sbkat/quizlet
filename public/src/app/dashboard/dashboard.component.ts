@@ -9,6 +9,7 @@ import { Router } from '@angular/router';
 })
 export class DashboardComponent implements OnInit {
   currentUser: any;
+  allQuiz: any[] = []
 
   constructor(
     private _httpService: HttpService,
@@ -17,6 +18,7 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit() {
     this.getCurrentUser();
+    this.allQuizzes();
   }
 
   getCurrentUser() {
@@ -29,4 +31,20 @@ export class DashboardComponent implements OnInit {
       }
     })
   }
+
+  allQuizzes() {
+    let observable = this._httpService.allQuizzes();
+    observable.subscribe((data: any) => {
+      this.allQuiz = data.quizzes; 
+    });
+  }
+
+  openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+  }
+
+  closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+  }
+  
 }

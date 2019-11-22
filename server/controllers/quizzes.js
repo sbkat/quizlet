@@ -17,7 +17,7 @@ module.exports = {
     allQuizzes(req, res) {
         Quiz.find()
           .then(quiz => {
-            res.json({ quiz: quiz, msg: 'Quizzes' });
+            res.json({ quizzes: quiz, msg: 'Quizzes' });
           })
           .catch(errors => {
             console.log(errors);

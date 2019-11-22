@@ -12,6 +12,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { CreateQuizComponent } from './create-quiz/create-quiz.component';
 import { GamePlatformComponent } from './game-platform/game-platform.component';
 import { HomepageComponent } from './homepage/homepage.component';
+import { AvailableQuizzesComponent } from './available-quizzes/available-quizzes.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { HomepageComponent } from './homepage/homepage.component';
     DashboardComponent,
     CreateQuizComponent,
     GamePlatformComponent,
-    HomepageComponent
+    HomepageComponent,
+    AvailableQuizzesComponent
   ],
   imports: [
     BrowserModule,
