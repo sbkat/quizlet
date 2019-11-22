@@ -1,5 +1,5 @@
 
-<span (click)="openNav()">&#9776; Available Quizzes</span>
+<span (click)="openNav()" class="clickToOpenNav">&#9776; Available Quizzes</span>
 
 <div id="mySidenav" class="sidenav">
     <a href="javascript:void(0)" class="closebtn" (click)="closeNav()">&times;</a>
@@ -9,4 +9,6 @@
     </ul>
 </div>
 
-<app-socket-room></app-socket-room>
+<div class="component">
+    <app-socket-room></app-socket-room>
+</div>
