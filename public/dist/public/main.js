@@ -149,7 +149,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<p>socket-room works!</p>\n<div>\n    <h4>Quiz: {{ quizToShow.title }}</h4>\n    <ul *ngFor=\"let question of allQuestions\">\n        <li> <u>{{ question.question }}</u>\n            <hr>\n            <ul *ngFor=\"let answer of answers\">\n                <li> {{ answer }}</li>\n        \n            </ul>\n        </li>\n\n    </ul>\n    <!-- <textarea class=\"answer\" [(ngModel)]='quiz.quiz' (keyup)='editQuiz()' placeholder='Whats your answer?'></textarea> -->\n    \n</div>\n\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<p>socket-room works!</p>\n<div>\n    <h4>Quiz: {{ quizToShow.title }}</h4>\n    <ul *ngFor=\"let question of quizToShow.questions\">\n        <li> <b>{{ question[0].question }}</b>\n            <hr>\n            <ul *ngFor=\"let answer of quizToShow.questions[0].options\">\n                <!-- <li (click)  > {{ answer }}</li> -->\n        \n            </ul>\n        </li>\n    </ul>\n        <!-- <textarea class=\"answer\" [(ngModel)]='quiz.quiz' (keyup)='editQuiz()' placeholder='Any notes?'></textarea> -->\n    \n</div>\n\n");
 
 /***/ }),
 

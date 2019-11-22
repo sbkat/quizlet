@@ -19,6 +19,8 @@ import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
 import { QuizListComponent } from './quiz-list/quiz-list.component';
 import { SocketRoomComponent } from './socket-room/socket-room.component';
 const config: SocketIoConfig = { url: 'http://localhost:4200', options: {} };
+// bootstrap
+import bootstrap from "bootstrap";
 
 
 
