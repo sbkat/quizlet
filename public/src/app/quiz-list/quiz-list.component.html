@@ -1,9 +1,12 @@
 
-<div class='sidenav'>
-    <span (click)='newQuiz()'>New Quiz</span>
-    <span (click)='hideBar()'>Hide</span>
-    <span [class.selected]='quizId === currentQuiz' (click)='loadQuiz(quizId)' *ngFor='let quizId of quizes | async'>{{ quizId }}</span>
-    <span>{{ quizes }}</span>
-    
+<span (click)="openNav()">&#9776; Available Quizzes</span>
+
+<div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" (click)="closeNav()">&times;</a>
+    <h3>Available Quizzes</h3>
+    <ul *ngFor="let quiz of quizes">
+        <li><a [routerLink]="">{{ quiz.title }}</a></li>
+    </ul>
 </div>
+
 <app-socket-room></app-socket-room>

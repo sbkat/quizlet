@@ -36,14 +36,18 @@ export class QuizListComponent implements OnInit, OnDestroy {
   allQuizes() {
     this.httpService.allQuizzes()
       .subscribe((data: any ) => {
-        this.quizes = data.allQuizes
-        console.log(this.allQuizes)
+        this.quizes = data.quizzes;
+        console.log(this.quizes);
       })
     
   }
 
-  hideBar() {
-    
+  openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+  }
+
+  closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
   }
 
   // newDoc() {

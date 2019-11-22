@@ -1,12 +1,12 @@
 <h1>Hello, {{ currentUser.username }}!</h1>
-<span (click)="openNav()">&#9776; Available Quizzes</span>
 
+<span (click)="openNav()">&#9776; Available Quizzes</span>
 
 <div id="mySidenav" class="sidenav">
     <a href="javascript:void(0)" class="closebtn" (click)="closeNav()">&times;</a>
     <h3>Available Quizzes</h3>
     <ul *ngFor="let quiz of allQuiz">
-        <li><a [routerLink]="['/display-quiz']">{{ quiz.title }}</a></li>
+        <li><a [routerLink]="">{{ quiz.title }}</a></li>
     </ul>
 </div>
 
