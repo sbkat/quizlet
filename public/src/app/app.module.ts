@@ -18,6 +18,7 @@ import { AvailableQuizzesComponent } from './available-quizzes/available-quizzes
 import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
 import { QuizListComponent } from './quiz-list/quiz-list.component';
 import { SocketRoomComponent } from './socket-room/socket-room.component';
+import { EditQuizComponent } from './edit-quiz/edit-quiz.component';
 const config: SocketIoConfig = { url: 'http://localhost:4200', options: {} };
 
 
@@ -33,7 +34,8 @@ const config: SocketIoConfig = { url: 'http://localhost:4200', options: {} };
     HomepageComponent,
     AvailableQuizzesComponent,
     QuizListComponent,
-    SocketRoomComponent
+    SocketRoomComponent,
+    EditQuizComponent
   ],
   imports: [
     BrowserModule,

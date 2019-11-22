@@ -46,5 +46,9 @@ export class DashboardComponent implements OnInit {
   closeNav() {
     document.getElementById("mySidenav").style.width = "0";
   }
+
+  editQuiz(quizId: string) {
+    this._router.navigate(['/edit/' + quizId]);
+  }
   
 }

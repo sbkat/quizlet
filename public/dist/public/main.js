@@ -71,7 +71,20 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<h1>Hello, {{ currentUser.username }}!</h1>\r\n\r\n<span (click)=\"openNav()\">&#9776; Available Quizzes</span>\r\n\r\n<div id=\"mySidenav\" class=\"sidenav\">\r\n    <a href=\"javascript:void(0)\" class=\"closebtn\" (click)=\"closeNav()\">&times;</a>\r\n    <h3>Available Quizzes</h3>\r\n    <ul *ngFor=\"let quiz of allQuiz\">\r\n        <li><a [routerLink]=\"\">{{ quiz.title }}</a></li>\r\n    </ul>\r\n</div>\r\n\r\n\r\n<div class=\"component\">\r\n    <app-create-quiz [allQuiz]=\"allQuiz\"></app-create-quiz>\r\n</div>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<h1>Hello, {{ currentUser.username }}!</h1>\r\n\r\n<span (click)=\"openNav()\">&#9776; Available Quizzes</span>\r\n\r\n<div id=\"mySidenav\" class=\"sidenav\">\r\n    <a href=\"javascript:void(0)\" class=\"closebtn\" (click)=\"closeNav()\">&times;</a>\r\n    <h3>Available Quizzes</h3>\r\n    <ul *ngFor=\"let quiz of allQuiz\">\r\n        <li><a (click)=\"editQuiz(quiz._id)\">{{ quiz.title }}</a></li>\r\n    </ul>\r\n</div>\r\n\r\n\r\n<div class=\"component\">\r\n    <app-create-quiz [allQuiz]=\"allQuiz\"></app-create-quiz>\r\n</div>\r\n");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/edit-quiz/edit-quiz.component.html":
+/*!******************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/edit-quiz/edit-quiz.component.html ***!
+  \******************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<p>edit-quiz works!</p>\n");
 
 /***/ }),
 
@@ -149,7 +162,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<p>socket-room works!</p>\r\n<div>\r\n    <h4>Question 1: {{}}</h4>\r\n    <textarea class=\"answer\" [(ngModel)]='quiz.quiz' (keyup)='editQuiz()' placeholder='Whats your answer?'></textarea>\r\n    <h4>Question 2: {{}}</h4>\r\n    <textarea class=\"answer\" [(ngModel)]='quiz.quiz' (keyup)='editQuiz()' placeholder='Whats your answer?'></textarea>\r\n    <h4>Question 3: {{}}</h4>\r\n    <textarea class=\"answer\" [(ngModel)]='quiz.quiz' (keyup)='editQuiz()' placeholder='Whats your answer?'></textarea>\r\n    <h4>Question 4: {{}}</h4>\r\n    <textarea class=\"answer\" [(ngModel)]='quiz.quiz' (keyup)='editQuiz()' placeholder='Whats your answer?'></textarea>\r\n    <h4>Question 5: {{}}</h4>\r\n    <textarea class=\"answer\" [(ngModel)]='quiz.quiz' (keyup)='editQuiz()' placeholder='Whats your answer?'></textarea>\r\n\r\n</div>\r\n\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<p>socket-room works!</p>\r\n<div>\r\n    <!-- <h4>Question 1: {{}}</h4>\r\n    <textarea class=\"answer\" [(ngModel)]='quiz.quiz' (keyup)='editQuiz()' placeholder='Whats your answer?'></textarea>\r\n    <h4>Question 2: {{}}</h4>\r\n    <textarea class=\"answer\" [(ngModel)]='quiz.quiz' (keyup)='editQuiz()' placeholder='Whats your answer?'></textarea>\r\n    <h4>Question 3: {{}}</h4>\r\n    <textarea class=\"answer\" [(ngModel)]='quiz.quiz' (keyup)='editQuiz()' placeholder='Whats your answer?'></textarea>\r\n    <h4>Question 4: {{}}</h4>\r\n    <textarea class=\"answer\" [(ngModel)]='quiz.quiz' (keyup)='editQuiz()' placeholder='Whats your answer?'></textarea>\r\n    <h4>Question 5: {{}}</h4>\r\n    <textarea class=\"answer\" [(ngModel)]='quiz.quiz' (keyup)='editQuiz()' placeholder='Whats your answer?'></textarea> -->\r\n\r\n</div>\r\n\r\n");
 
 /***/ }),
 
@@ -400,9 +413,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _create_quiz_create_quiz_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./create-quiz/create-quiz.component */ "./src/app/create-quiz/create-quiz.component.ts");
 /* harmony import */ var _homepage_homepage_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./homepage/homepage.component */ "./src/app/homepage/homepage.component.ts");
 /* harmony import */ var _available_quizzes_available_quizzes_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./available-quizzes/available-quizzes.component */ "./src/app/available-quizzes/available-quizzes.component.ts");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
-/* harmony import */ var _quiz_list_quiz_list_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./quiz-list/quiz-list.component */ "./src/app/quiz-list/quiz-list.component.ts");
+/* harmony import */ var _edit_quiz_edit_quiz_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./edit-quiz/edit-quiz.component */ "./src/app/edit-quiz/edit-quiz.component.ts");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! @angular/router */ "./node_modules/@angular/router/fesm2015/router.js");
+/* harmony import */ var _quiz_list_quiz_list_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./quiz-list/quiz-list.component */ "./src/app/quiz-list/quiz-list.component.ts");
+
 
 
 
@@ -415,7 +430,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 const routes = [
-    { path: 'quiz-list', component: _quiz_list_quiz_list_component__WEBPACK_IMPORTED_MODULE_10__["QuizListComponent"] },
+    { path: 'quiz-list', component: _quiz_list_quiz_list_component__WEBPACK_IMPORTED_MODULE_11__["QuizListComponent"] },
     { path: 'login', component: _login_login_component__WEBPACK_IMPORTED_MODULE_1__["LoginComponent"] },
     { path: 'signup', component: _sign_up_sign_up_component__WEBPACK_IMPORTED_MODULE_2__["SignUpComponent"] },
     { path: 'dashboard', component: _dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_3__["DashboardComponent"] },
@@ -423,15 +438,16 @@ const routes = [
     { path: 'create-quiz', component: _create_quiz_create_quiz_component__WEBPACK_IMPORTED_MODULE_5__["CreateQuizComponent"] },
     { path: 'homepage', component: _homepage_homepage_component__WEBPACK_IMPORTED_MODULE_6__["HomepageComponent"] },
     { path: 'available', component: _available_quizzes_available_quizzes_component__WEBPACK_IMPORTED_MODULE_7__["AvailableQuizzesComponent"] },
+    { path: 'edit/:id', component: _edit_quiz_edit_quiz_component__WEBPACK_IMPORTED_MODULE_8__["EditQuizComponent"] },
     { path: '', pathMatch: 'full', redirectTo: '/homepage' },
     { path: '*', pathMatch: 'full', redirectTo: '/' },
 ];
 let AppRoutingModule = class AppRoutingModule {
 };
 AppRoutingModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-    Object(_angular_core__WEBPACK_IMPORTED_MODULE_8__["NgModule"])({
-        imports: [_angular_router__WEBPACK_IMPORTED_MODULE_9__["RouterModule"].forRoot(routes)],
-        exports: [_angular_router__WEBPACK_IMPORTED_MODULE_9__["RouterModule"]]
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_9__["NgModule"])({
+        imports: [_angular_router__WEBPACK_IMPORTED_MODULE_10__["RouterModule"].forRoot(routes)],
+        exports: [_angular_router__WEBPACK_IMPORTED_MODULE_10__["RouterModule"]]
     })
 ], AppRoutingModule);
 
@@ -511,6 +527,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var ngx_socket_io__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ngx-socket-io */ "./node_modules/ngx-socket-io/fesm2015/ngx-socket-io.js");
 /* harmony import */ var _quiz_list_quiz_list_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./quiz-list/quiz-list.component */ "./src/app/quiz-list/quiz-list.component.ts");
 /* harmony import */ var _socket_room_socket_room_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./socket-room/socket-room.component */ "./src/app/socket-room/socket-room.component.ts");
+/* harmony import */ var _edit_quiz_edit_quiz_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./edit-quiz/edit-quiz.component */ "./src/app/edit-quiz/edit-quiz.component.ts");
 
 
 
@@ -527,6 +544,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 // socket Module
+
 
 
 
@@ -551,7 +569,8 @@ AppModule = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
             _homepage_homepage_component__WEBPACK_IMPORTED_MODULE_13__["HomepageComponent"],
             _available_quizzes_available_quizzes_component__WEBPACK_IMPORTED_MODULE_14__["AvailableQuizzesComponent"],
             _quiz_list_quiz_list_component__WEBPACK_IMPORTED_MODULE_16__["QuizListComponent"],
-            _socket_room_socket_room_component__WEBPACK_IMPORTED_MODULE_17__["SocketRoomComponent"]
+            _socket_room_socket_room_component__WEBPACK_IMPORTED_MODULE_17__["SocketRoomComponent"],
+            _edit_quiz_edit_quiz_component__WEBPACK_IMPORTED_MODULE_18__["EditQuizComponent"]
         ],
         imports: [
             _angular_platform_browser__WEBPACK_IMPORTED_MODULE_1__["BrowserModule"],
@@ -781,6 +800,9 @@ let DashboardComponent = class DashboardComponent {
     closeNav() {
         document.getElementById("mySidenav").style.width = "0";
     }
+    editQuiz(quizId) {
+        this._router.navigate(['/edit/' + quizId]);
+    }
 };
 DashboardComponent.ctorParameters = () => [
     { type: _services_http_service__WEBPACK_IMPORTED_MODULE_2__["HttpService"] },
@@ -793,6 +815,50 @@ DashboardComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./dashboard.component.scss */ "./src/app/dashboard/dashboard.component.scss")).default]
     })
 ], DashboardComponent);
+
+
+
+/***/ }),
+
+/***/ "./src/app/edit-quiz/edit-quiz.component.scss":
+/*!****************************************************!*\
+  !*** ./src/app/edit-quiz/edit-quiz.component.scss ***!
+  \****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL2VkaXQtcXVpei9lZGl0LXF1aXouY29tcG9uZW50LnNjc3MifQ== */");
+
+/***/ }),
+
+/***/ "./src/app/edit-quiz/edit-quiz.component.ts":
+/*!**************************************************!*\
+  !*** ./src/app/edit-quiz/edit-quiz.component.ts ***!
+  \**************************************************/
+/*! exports provided: EditQuizComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EditQuizComponent", function() { return EditQuizComponent; });
+/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm2015/core.js");
+
+
+let EditQuizComponent = class EditQuizComponent {
+    constructor() { }
+    ngOnInit() {
+    }
+};
+EditQuizComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
+    Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
+        selector: 'app-edit-quiz',
+        template: tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! raw-loader!./edit-quiz.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/edit-quiz/edit-quiz.component.html")).default,
+        styles: [tslib__WEBPACK_IMPORTED_MODULE_0__["__importDefault"](__webpack_require__(/*! ./edit-quiz.component.scss */ "./src/app/edit-quiz/edit-quiz.component.scss")).default]
+    })
+], EditQuizComponent);
 
 
 
